@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tonevellah.demofx1.Scene4Controller">
+   <children>
+      <VBox layoutX="-8.0" layoutY="1.0" prefHeight="592.0" prefWidth="293.0" style="-fx-background-color: #3F2B63;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="132.0" prefWidth="289.0">
+               <children>
+                  <Label layoutX="65.0" layoutY="40.0" prefHeight="53.0" prefWidth="180.0" text="TypeDash" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+               </children>
+            </Pane>
+            <Button mnemonicParsing="false" onAction="#playGame" prefHeight="66.0" prefWidth="294.0" style="-fx-background-color: #3F2B63;" text="WPMRush" textAlignment="CENTER" textFill="#ebe6e6">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <ColorAdjust brightness="0.3" />
+               </effect>
+            </Button>
+            <Pane prefHeight="4.0" prefWidth="283.0" />
+            <Button mnemonicParsing="false" onAction="#custom" prefHeight="70.0" prefWidth="296.0" style="-fx-background-color: #3F2B63;" text="Custom Race" textAlignment="CENTER" textFill="#ebe6e6">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <ColorAdjust brightness="0.3" />
+               </effect>
+            </Button>
+            <Pane prefHeight="4.0" prefWidth="283.0" />
+            <Button mnemonicParsing="false" onAction="#programing" prefHeight="67.0" prefWidth="299.0" style="-fx-background-color: #3F2B63;" text="Programming Race" textFill="#ebe6e6">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <ColorAdjust brightness="0.3" />
+               </effect>
+            </Button>
+            <Pane prefHeight="4.0" prefWidth="283.0" />
+            <Button mnemonicParsing="false" onAction="#graph" prefHeight="65.0" prefWidth="294.0" style="-fx-background-color: #3F2B63;" text="WPM Graph" textAlignment="CENTER" textFill="#ebe6e6">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <ColorAdjust brightness="0.3" />
+               </effect>
+            </Button>
+            <Pane prefHeight="4.0" prefWidth="283.0" />
+            <Button mnemonicParsing="false" onAction="#exit" prefHeight="63.0" prefWidth="297.0" style="-fx-background-color: #3F2B63;" text="Exit" textFill="#ecdbdb">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <ColorAdjust brightness="0.3" />
+               </effect>
+            </Button>
+            <Pane prefHeight="4.0" prefWidth="283.0" />
+         </children>
+      </VBox>
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="4.0" prefWidth="283.0" />
+      <ImageView fitHeight="592.0" fitWidth="597.0" layoutX="285.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@iron2.jpg" />
+         </image>
+      </ImageView>
+   </children>
+   <effect>
+      <Blend />
+   </effect>
+</AnchorPane>

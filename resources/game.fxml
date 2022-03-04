@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tonevellah.demofx1.Gamecontroller">
+   <children>
+      <Text fx:id="wordsPerMin" layoutX="464.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font></Text>
+      <Text fx:id="accuracy" layoutX="612.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font></Text>
+      <Text fx:id="seconds" layoutX="277.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="60" textAlignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font></Text>
+      <TextField fx:id="userWord" layoutX="329.0" layoutY="347.0" onKeyPressed="#startGame" prefHeight="61.0" prefWidth="283.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <Button fx:id="playAgain" layoutX="430.0" layoutY="500.0" mnemonicParsing="false" onAction="#playAgain" prefHeight="32.0" prefWidth="82.0" style="-fx-background-color: #0598ff;" text="View Result" textAlignment="CENTER">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ImageView fx:id="correct" fitHeight="60.0" fitWidth="60.0" layoutX="441.0" layoutY="440.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@check.png" />
+         </image></ImageView>
+      <ImageView fx:id="wrong" fitHeight="60.0" fitWidth="60.0" layoutX="441.0" layoutY="440.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@wrong.png" />
+         </image></ImageView>
+      <Text fx:id="programWord" fill="#0598ff" layoutX="374.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="204.2734375">
+         <font>
+            <Font size="24.0" />
+         </font></Text>
+      <Text fx:id="secondProgramWord" layoutX="595.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <Text fx:id="previousProgramWord" fill="#716767" layoutX="286.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="thirddProgramWord" layoutX="742.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="secpreviousProgramWord" fill="#8c8b8b" layoutX="164.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Pane prefHeight="592.0" prefWidth="150.0" style="-fx-background-color: #3F2B63;">
+         <children>
+            <Text fill="#eae3e3" layoutX="9.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TYPEDASH">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Text>
+         </children></Pane>
+      <ImageView fitHeight="144.0" fitWidth="592.0" layoutX="219.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@TypeDash.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="447.0" layoutY="157.0" text="WPM">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="595.0" layoutY="157.0" text="Accuracy">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="249.0" layoutY="157.0" text="Time Left">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
