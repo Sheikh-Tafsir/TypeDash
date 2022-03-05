@@ -3,8 +3,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="881.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tonevellah.demofx1.Scene5Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="881.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tonevellah.demofx1.Scene7Controller">
     <children>
         <VBox layoutX="-1.0" layoutY="1.0" prefHeight="592.0" prefWidth="286.0" style="-fx-background-color: #3F2B63;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -51,7 +50,7 @@
                 </Pane>
             </children>
         </VBox>
-        <Button layoutX="562.0" layoutY="413.0" mnemonicParsing="false" onAction="#gotogame" prefHeight="37.0" prefWidth="95.0" style="-fx-background-color: #0598ff;" text="Start" textFill="#faf4f4">
+        <Button layoutX="553.0" layoutY="462.0" mnemonicParsing="false" onAction="#gotogame" prefHeight="37.0" prefWidth="95.0" style="-fx-background-color: #0598ff;" text="Start" textFill="#faf4f4">
             <font>
                 <Font size="14.0" />
             </font>
@@ -59,7 +58,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Text fill="#0095ff" layoutX="519.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Level" wrappingWidth="180.0000000000001">
+        <Text fill="#0095ff" layoutX="486.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Write Your Text" wrappingWidth="210.39993286132824">
             <font>
                 <Font size="30.0" />
             </font>
@@ -69,28 +68,17 @@
                 <Image url="@TypeDash.png" />
             </image>
         </ImageView>
-        <Button layoutX="578.0" layoutY="516.0" mnemonicParsing="false" onAction="#goback" prefHeight="28.0" prefWidth="62.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Go Back" textFill="#333030">
+        <Button layoutX="569.0" layoutY="518.0" mnemonicParsing="false" onAction="#goback" prefHeight="28.0" prefWidth="62.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Go Back" textFill="#333030">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor></Button>
-      <RadioButton fx:id="rButton1" layoutX="369.0" layoutY="288.0" mnemonicParsing="false" onAction="#getLevel" prefHeight="27.0" prefWidth="142.0" text="Easy Text">
+      <TextArea fx:id="customtext" layoutX="319.0" layoutY="255.0" prefHeight="180.0" prefWidth="530.0" promptText="start" wrapText="true">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
-          <toggleGroup>
-              <ToggleGroup fx:id="levels" />
-          </toggleGroup>
-      </RadioButton>
-      <RadioButton fx:id="rButton2" layoutX="534.0" layoutY="288.0" mnemonicParsing="false" onAction="#getLevel" prefHeight="27.0" prefWidth="142.0" text="Medium Text" toggleGroup="$levels">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </RadioButton>
-      <RadioButton fx:id="rButton3" layoutX="716.0" layoutY="288.0" mnemonicParsing="false" onAction="#getLevel" prefHeight="27.0" prefWidth="142.0" text="Hard Text" toggleGroup="$levels">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </RadioButton>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextArea>
     </children>
     <effect>
         <Blend />

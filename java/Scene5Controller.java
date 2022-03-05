@@ -79,7 +79,7 @@ public class Scene5Controller {
     }
 
 
-    public void setLevel(ActionEvent e) throws IOException{
+    public void gotogame(ActionEvent e) throws IOException{
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
         root = loader.load();

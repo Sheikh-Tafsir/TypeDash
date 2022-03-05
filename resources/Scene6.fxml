@@ -78,7 +78,7 @@
                 <Image url="@TypeDash.png" />
             </image>
         </ImageView>
-        <Button fx:id="button" layoutX="573.0" layoutY="516.0" mnemonicParsing="false" onAction="#goback" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Try Again" textFill="#333030">
+        <Button fx:id="button" layoutX="573.0" layoutY="516.0" mnemonicParsing="false" onAction="#tryagain" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Try Again" textFill="#333030">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor></Button>

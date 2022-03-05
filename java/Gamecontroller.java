@@ -81,36 +81,58 @@ public class Gamecontroller {
         catch(Exception e){
             System.out.println(e);
         }
-        min=max-1;
-        max*=7;
-        min*=7;
-        String st="";
-        int i=0;
-        int ran = (int)Math.floor(Math.random()*(max-min+1)+min);
+        if(max==5){
+            String st = "";
+            try {
+                File file = new File("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/custext.txt");
+                Scanner fileinput = new Scanner(file);
 
-        System.out.println("random" + ran);
-        try {
-            File file = new File("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/Lines.txt");
-            Scanner fileinput = new Scanner(file);
-
-            while (fileinput.hasNext()) {
-                String s = fileinput.nextLine();
-                if(i>=ran) {
+                while (fileinput.hasNext()) {
+                    String s = fileinput.nextLine();
                     st += s;
                 }
-                i++;
+                fileinput.close();
             }
-            fileinput.close();
+            catch(Exception e){
+                System.out.println(e);
+            }
+            return st;
         }
-        catch(Exception e){
-            System.out.println(e);
+        else {
+            min = max - 1;
+            max *= 7;
+            min *= 7;
+            String st = "";
+            int i = 0;
+            int ran = (int) Math.floor(Math.random() * (max - min + 1) + min);
+
+            System.out.println("random" + ran);
+            try {
+                File file = new File("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/Lines.txt");
+                Scanner fileinput = new Scanner(file);
+
+                while (fileinput.hasNext()) {
+                    String s = fileinput.nextLine();
+                    if (i >= ran) {
+                        st += s;
+                    }
+                    i++;
+                }
+                fileinput.close();
+            }
+            catch (Exception e) {
+                System.out.println(e);
+            }
+            return st;
         }
-        return st;
     }
 
+    public void customtext(String ctext) {
+        givenstring=ctext;
+    }
 
-    //String[] givenwords = givenstring.split("\\.")[0];
-    String[] givenwords = givenstring.split("\\W");
+    String[] givenwords = givenstring.split(" ");
+    //String[] givenwords = givenstring.split("\\W");
 
     public void setfirstword() {
         secpreviousProgramWord.setText("start");

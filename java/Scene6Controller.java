@@ -41,8 +41,8 @@ public class Scene6Controller {
         typedwordsLabel.setText(String.valueOf(typedWords) + " Words");
         wrongtwordsLabel.setText(String.valueOf(wrongWords) + " Words");
     }
-    public void goback(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Scene5.fxml"));
+    public void tryagain(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("Scene4.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
