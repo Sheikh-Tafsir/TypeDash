@@ -25,6 +25,10 @@ public class Scene6Controller {
     Label wrongtwordsLabel;
     @FXML
     Button button;
+    @FXML
+    Button exitButton;
+    @FXML
+    Button statButton;
 
     private Stage stage;
     private Scene scene;
@@ -38,10 +42,19 @@ public class Scene6Controller {
         wrongtwordsLabel.setText(String.valueOf(wrongWords) + " Words");
     }
     public void goback(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+        root = FXMLLoader.load(getClass().getResource("Scene5.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+    public void viewGraph(ActionEvent e) {
+
+        System.out.println("graph");
+    }
+    public void exit(ActionEvent e) {
+
+        //System.out.println("Exit");
+        System.exit(0);
     }
 }

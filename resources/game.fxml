@@ -11,21 +11,21 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tonevellah.demofx1.Gamecontroller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="881.0" style="-fx-background-color: #3F3131;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tonevellah.demofx1.Gamecontroller">
    <children>
-      <Text fx:id="wordsPerMin" layoutX="464.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+      <Text fx:id="wordsPerMin" fill="WHITE" layoutX="464.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
          <font>
             <Font size="24.0" />
          </font></Text>
-      <Text fx:id="accuracy" layoutX="612.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER">
+      <Text fx:id="accuracy" fill="WHITE" layoutX="612.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER">
          <font>
             <Font size="24.0" />
          </font></Text>
-      <Text fx:id="seconds" layoutX="277.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="60" textAlignment="CENTER">
+      <Text fx:id="seconds" fill="WHITE" layoutX="277.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="60" textAlignment="CENTER">
          <font>
             <Font size="24.0" />
          </font></Text>
-      <TextField fx:id="userWord" layoutX="329.0" layoutY="347.0" onKeyPressed="#startGame" prefHeight="61.0" prefWidth="283.0">
+      <TextField fx:id="userWord" layoutX="329.0" layoutY="347.0" onKeyPressed="#startGame" prefHeight="61.0" prefWidth="283.0" promptText="Go">
          <font>
             <Font size="24.0" />
          </font>
@@ -48,21 +48,21 @@
          <font>
             <Font size="24.0" />
          </font></Text>
-      <Text fx:id="secondProgramWord" layoutX="595.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER">
+      <Text fx:id="secondProgramWord" fill="WHITE" layoutX="595.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="121.60002441406255">
          <font>
             <Font size="18.0" />
          </font></Text>
-      <Text fx:id="previousProgramWord" fill="#716767" layoutX="286.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER">
+      <Text fx:id="previousProgramWord" fill="#c7b6b6" layoutX="277.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="79.20000000000005">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fx:id="thirddProgramWord" layoutX="742.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER">
+      <Text fx:id="thirddProgramWord" fill="WHITE" layoutX="745.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="121.60002441406255">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fx:id="secpreviousProgramWord" fill="#8c8b8b" layoutX="164.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER">
+      <Text fx:id="secpreviousProgramWord" fill="#8c8b8b" layoutX="165.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="90.00505065917969">
          <font>
             <Font size="18.0" />
          </font>
@@ -80,17 +80,17 @@
             <Image url="@TypeDash.png" />
          </image>
       </ImageView>
-      <Label layoutX="447.0" layoutY="157.0" text="WPM">
+      <Label layoutX="447.0" layoutY="157.0" text="WPM" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="595.0" layoutY="157.0" text="Accuracy">
+      <Label layoutX="595.0" layoutY="157.0" text="Accuracy" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="249.0" layoutY="157.0" text="Time Left">
+      <Label layoutX="249.0" layoutY="157.0" text="Time Left" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>

@@ -7,7 +7,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -16,22 +15,18 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.*;
-import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.ResourceBundle;
+import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Gamecontroller {
     private int wordCounter = 0;
     private int first = 0;
     int fir = 0;
 
-    private File saveData;
+    //private File saveData;
 
     ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
 
@@ -57,12 +52,6 @@ public class Gamecontroller {
     @FXML
     private Text previousProgramWord;
 
-
-    /*@FXML
-    private Label programWord;
-    @FXML
-    private Label secondProgramWord;*/
-
     @FXML
     private TextField userWord;
 
@@ -74,13 +63,66 @@ public class Gamecontroller {
     @FXML
     private Button playAgain;
 
-    ArrayList<String> words = new ArrayList<>();
-    String givenstring ="Bangladesh is a small and beautiful country in South Asia. We got independence in 1971 from Pakistan after a long war. Because of the sacrifice of millions of freedom fighters we got this country. 16 December is our Victory Day because this day the Pakistani army surrendered.\n" +
-            "\n" +
-            "And 26th March is our Independence Day because in 1971’s 26th March Ziaur Rahman declared our independence from Chittagong. We are the only nation that sacrifices lives for language and now it is known as International Mother Language Day on 21st February. More than 180 countries celebrate this day. Bangladesh is a very beautiful country to see. ";
-    String[] givenwords = givenstring.split("\\W");
-    //String[] givenwords = givenstring.split("\\.")[0];
+    public String givenstring =takeGivenLine();
 
+    public String takeGivenLine(){
+        int max=50,min=40;
+        try {
+            File file = new File("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/Levels.txt");
+            Scanner fileinput = new Scanner(file);
+
+            while (fileinput.hasNext()) {
+                String s = fileinput.nextLine();
+                max=Integer.valueOf(s);
+                System.out.println("reading"+ s);
+            }
+            fileinput.close();
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+        min=max-1;
+        max*=7;
+        min*=7;
+        String st="";
+        int i=0;
+        int ran = (int)Math.floor(Math.random()*(max-min+1)+min);
+
+        System.out.println("random" + ran);
+        try {
+            File file = new File("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/Lines.txt");
+            Scanner fileinput = new Scanner(file);
+
+            while (fileinput.hasNext()) {
+                String s = fileinput.nextLine();
+                if(i>=ran) {
+                    st += s;
+                }
+                i++;
+            }
+            fileinput.close();
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+        return st;
+    }
+
+
+    //String[] givenwords = givenstring.split("\\.")[0];
+    String[] givenwords = givenstring.split("\\W");
+
+    public void setfirstword() {
+        secpreviousProgramWord.setText("start");
+        previousProgramWord.setText("here:- ");
+        programWord.setText(givenwords[0]);
+        secondProgramWord.setText(givenwords[1]);
+        thirddProgramWord.setText(givenwords[2]);
+
+        playAgain.setVisible(false);
+        wrong.setVisible(false);
+        correct.setVisible(false);
+    }
 
     public void playAgain(ActionEvent e) throws IOException {
         //System.out.println("ttt");
@@ -95,38 +137,7 @@ public class Gamecontroller {
         stage.setScene(scene);
         stage.show();
     }
-    /*public void initialize(URL url, ResourceBundle resourceBundle) {
-        programWord.setText(givenwords[0]);
-        secondProgramWord.setText(givenwords[1]);
-    }*/
-    public void setfirstword() {
-        secpreviousProgramWord.setText("start");
-        previousProgramWord.setText("here:- ");
-        programWord.setText(givenwords[0]);
-        secondProgramWord.setText(givenwords[1]);
-        thirddProgramWord.setText(givenwords[2]);
 
-        playAgain.setVisible(false);
-        wrong.setVisible(false);
-        correct.setVisible(false);
-    }
-
-    /*public void addToList() {
-        BufferedReader reader;
-        try {
-            reader = new BufferedReader(new
-                    FileReader("wordsList"));
-            String line = reader.readLine();
-            while (line != null) {
-                words.add(line);
-                // read next line
-                line = reader.readLine();
-            }
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }*/
 
     private int countAll = 0;
     private int counter = 0;
@@ -148,7 +159,7 @@ public class Gamecontroller {
                     userWord.setText("Game over");
                     playAgain.setVisible(true);
 
-                    try {
+                    /*try {
                         FileWriter myWriter = new FileWriter(saveData);
                         myWriter.write(countAll +";");
                         myWriter.write(counter +";");
@@ -156,7 +167,7 @@ public class Gamecontroller {
                         myWriter.close();
                     } catch (IOException e) {
                         e.printStackTrace();
-                    }
+                    }*/
                 }
 
                 if (timer == -4) {
@@ -169,57 +180,6 @@ public class Gamecontroller {
             }
         }
     };
-
-    /*Runnable fadeCorrect = new Runnable() {
-        @Override
-        public void run() {
-            correct.setOpacity(0);
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            correct.setOpacity(50);
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            correct.setOpacity(100);
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            correct.setOpacity(0);
-
-        }
-    };
-
-    Runnable fadeWrong = new Runnable() {
-        @Override
-        public void run() {
-            wrong.setOpacity(0);
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            wrong.setOpacity(50);
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            wrong.setOpacity(100);
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            wrong.setOpacity(0);
-        }
-    };*/
 
 
     public void startGame(KeyEvent ke) throws IOException{
@@ -239,13 +199,6 @@ public class Gamecontroller {
             String real = programWord.getText();
 
             countAll++;
-            /*if(timer==0){
-                root = FXMLLoader.load(getClass().getResource("scene5.fxml"));
-                stage = (Stage)((Node)ke.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-            }*/
             if (s.equals(real)) {
                 counter++;
                 wordsPerMin.setText(String.valueOf(counter));

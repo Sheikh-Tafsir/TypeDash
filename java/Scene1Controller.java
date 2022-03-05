@@ -39,15 +39,19 @@ public class Scene1Controller {
         System.exit(0);
     }
     public void wpmrush(ActionEvent e) throws IOException{
-        // System.out.println("wprush");
-        //String username = "tafsir rahman is a student";
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
+        /*FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
         root = loader.load();
         //root = FXMLLoader.load(getClass().getResource("game.fxml"));
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         Gamecontroller gamecontroller = loader.getController();
+        gamecontroller.takeGivenLine();
         gamecontroller.setfirstword();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();*/
+
+        root = FXMLLoader.load(getClass().getResource("Scene5.fxml"));
+        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
