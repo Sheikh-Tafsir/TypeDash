@@ -16,6 +16,7 @@
 ## Languages
 ![Java](https://img.shields.io/badge/-Java-000000?style=flat&logo=java)
 ![SQL](https://img.shields.io/badge/-SQL-000000?style=flat&logo=mysql)
+![Java](https://img.shields.io/badge/-JavaFX-000000?style=flat&logo=java)
 ![CSS3](https://img.shields.io/badge/-CSS-000000?style=flat&logo=css3)
   
 
