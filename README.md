@@ -8,10 +8,11 @@
 
 ## Features
 - Distinct Username and password for the users.
-- Registered Users can test WPM, use custom text practice and view personal improvement statistics over time.
-- Guest Users can test WPM without logging in.
+- All features including WPM test, custom text practice and viewing personal improvement statistics over time for the Registered Users.
+- Only WPM test feature without logging in for the Guest Users.
 - Attractive and User friendly Interface.
 - Offline based and light weight software.
+- Dual Theme UI.
 
 ## Languages
 ![Java](https://img.shields.io/badge/-Java-000000?style=flat&logo=java)
