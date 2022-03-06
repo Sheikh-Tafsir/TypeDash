@@ -14,40 +14,18 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import static com.tonevellah.demofx1.Scene1Controller.clr;
+
 public class Scene4Controller
 {
     @FXML
     private Stage stage;
     private Scene scene;
     private Parent root;
-    /*public void wpmrush(ActionEvent e)throws IOException {
-        //System.out.println("WPMRush");
 
-        //String username = "we are iutians which is in gazipur, one of the most polluted cities of bangladesh";
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
-        root = loader.load();
-
-        //Scene5Controller scene5Controller = loader.getController();
-        //scene5Controller.displayName();
-
-        //root = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }*/
     public void playGame(ActionEvent e) throws IOException {
-        /*FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
-        root = loader.load();
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Gamecontroller gamecontroller = loader.getController();
-        gamecontroller.takeGivenLine();
-        gamecontroller.setfirstword();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();*/
-        root = FXMLLoader.load(getClass().getResource("Scene5.fxml"));
+        if(clr==0)root = FXMLLoader.load(getClass().getResource("Scene5.fxml"));
+        else root = FXMLLoader.load(getClass().getResource("Scene15.fxml"));
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -56,7 +34,8 @@ public class Scene4Controller
     public void custom(ActionEvent e)throws IOException {
 
        // System.out.println("Custom");
-        root = FXMLLoader.load(getClass().getResource("Scene7.fxml"));
+        if(clr==0)root = FXMLLoader.load(getClass().getResource("Scene7.fxml"));
+        else root = FXMLLoader.load(getClass().getResource("Scene17.fxml"));
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -75,15 +54,29 @@ public class Scene4Controller
             ex.printStackTrace();
         }
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
-        root = loader.load();
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Gamecontroller gamecontroller = loader.getController();
-        gamecontroller.takeGivenLine();
-        gamecontroller.setfirstword();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if(clr==0){
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
+            root = loader.load();
+            stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+            Gamecontroller gamecontroller = loader.getController();
+            gamecontroller.takeGivenLine();
+            gamecontroller.setfirstword();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        else{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("gameb.fxml"));
+            root = loader.load();
+            stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+            Gamecontroller gamecontroller = loader.getController();
+            gamecontroller.takeGivenLine();
+            gamecontroller.setfirstword();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+
     }
     public void graph(ActionEvent e) {
         System.out.println("Graph");

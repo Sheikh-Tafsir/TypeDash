@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import static com.tonevellah.demofx1.Scene1Controller.clr;
+
 public class Scene7Controller {
 
     @FXML
@@ -50,15 +52,30 @@ public class Scene7Controller {
             exc.printStackTrace();
         }
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
-        root = loader.load();
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Gamecontroller gamecontroller = loader.getController();
-        gamecontroller.takeGivenLine();
-        gamecontroller.setfirstword();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if(clr==0){
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
+            root = loader.load();
+            stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+            Gamecontroller gamecontroller = loader.getController();
+            gamecontroller.takeGivenLine();
+            gamecontroller.setfirstword();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        else{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("gameb.fxml"));
+            root = loader.load();
+            stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+            Gamecontroller gamecontroller = loader.getController();
+            gamecontroller.takeGivenLine();
+            gamecontroller.setfirstword();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+
+
     }
     public void goback(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("Scene4.fxml"));

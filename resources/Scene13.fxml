@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="881.0" style="-fx-background-color: #3F3131;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tonevellah.demofx1.Scene3Controller">
+    <children>
+        <VBox layoutX="-1.0" layoutY="1.0" prefHeight="592.0" prefWidth="286.0" style="-fx-background-color: #3F2B63;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Pane prefHeight="132.0" prefWidth="289.0">
+                    <children>
+                        <Label layoutX="60.0" layoutY="40.0" prefHeight="53.0" prefWidth="180.0" text="TypeDash" textOverrun="WORD_ELLIPSIS">
+                            <font>
+                                <Font size="36.0" />
+                            </font>
+                            <textFill>
+                                <LinearGradient endX="1.0" endY="1.0">
+                                    <stops>
+                                        <Stop>
+                                            <color>
+                                                <Color />
+                                            </color>
+                                        </Stop>
+                                        <Stop offset="1.0">
+                                            <color>
+                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                            </color>
+                                        </Stop>
+                                    </stops>
+                                </LinearGradient>
+                            </textFill>
+                            <font>
+                                <Font size="36.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+            </children>
+        </VBox>
+        <TextField layoutX="492.0" layoutY="257.0" prefHeight="53.0" prefWidth="235.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </TextField>
+        <PasswordField layoutX="492.0" layoutY="328.0" prefHeight="43.0" prefWidth="235.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </PasswordField>
+        <Button layoutX="562.0" layoutY="413.0" mnemonicParsing="false" onAction="#menu" prefHeight="37.0" prefWidth="95.0" style="-fx-background-color: #0598ff;" text="SignUp" textFill="#faf4f4">
+            <font>
+                <Font size="14.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Text fill="#0095ff" layoutX="524.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User SignUp" wrappingWidth="170.00000000000006">
+            <font>
+                <Font size="30.0" />
+            </font>
+        </Text>
+        <ImageView fitHeight="159.0" fitWidth="574.0" layoutX="305.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@TypeDash.png" />
+            </image>
+        </ImageView>
+        <Button layoutX="578.0" layoutY="516.0" mnemonicParsing="false" onAction="#goback" prefHeight="28.0" prefWidth="62.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Go Back" textFill="WHITE">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor></Button>
+    </children>
+    <effect>
+        <Blend />
+    </effect>
+    <cursor>
+        <Cursor fx:constant="HAND" />
+    </cursor>
+</AnchorPane>

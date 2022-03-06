@@ -21,6 +21,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import static com.tonevellah.demofx1.Scene1Controller.clr;
+
 public class Gamecontroller {
     private int wordCounter = 0;
     private int first = 0;
@@ -148,22 +150,37 @@ public class Gamecontroller {
 
     public void playAgain(ActionEvent e) throws IOException {
         //System.out.println("ttt");
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene6.fxml"));
-        root = loader.load();
-        //root = FXMLLoader.load(getClass().getResource("game.fxml"));
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Scene6Controller scene6controller= loader.getController();
-        int acc=(int) Math.round((counter*1.0/countAll)*100);
-        scene6controller.displayResult(counter,acc,countAll,countAll-counter);
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if(clr==0) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene6.fxml"));
+            root = loader.load();
+            //root = FXMLLoader.load(getClass().getResource("game.fxml"));
+            stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            Scene6Controller scene6controller = loader.getController();
+            int acc = (int) Math.round((counter * 1.0 / countAll) * 100);
+            scene6controller.displayResult(counter, acc, countAll, countAll - counter);
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        else{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene16.fxml"));
+            root = loader.load();
+            //root = FXMLLoader.load(getClass().getResource("game.fxml"));
+            stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            Scene6Controller scene6controller = loader.getController();
+            int acc = (int) Math.round((counter * 1.0 / countAll) * 100);
+            scene6controller.displayResult(counter, acc, countAll, countAll - counter);
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+
     }
 
 
     private int countAll = 0;
     private int counter = 0;
-    private int timer = 60;
+    private int timer = 5;
 
     Runnable r = new Runnable() {
         @Override

@@ -17,12 +17,16 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static com.tonevellah.demofx1.Scene1Controller.clr;
+
+
 public class Scene2Controller {
     private Stage stage;
     private Scene scene;
     private Parent root;
 
     public void menu(ActionEvent event) throws IOException {
+        System.out.println(clr);
         root = FXMLLoader.load(getClass().getResource("Scene4.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -30,7 +34,8 @@ public class Scene2Controller {
         stage.show();
     }
     public void goback(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+        if(clr==0)root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+        else root = FXMLLoader.load(getClass().getResource("hello-viewb.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
