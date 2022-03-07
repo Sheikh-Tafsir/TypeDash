@@ -25,7 +25,8 @@ public class Scene3Controller {
     private Parent root;
 
     public void menu(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Scene4.fxml"));
+        if(clr==0)root = FXMLLoader.load(getClass().getResource("Scene4.fxml"));
+        else root = FXMLLoader.load(getClass().getResource("Scene14.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

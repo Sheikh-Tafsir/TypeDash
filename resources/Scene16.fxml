@@ -10,45 +10,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="881.0" style="-fx-background-color: #3F3131;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tonevellah.demofx1.Scene6Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: #3F3131;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tonevellah.demofx1.Scene6Controller">
     <children>
-        <VBox layoutX="-1.0" layoutY="1.0" prefHeight="592.0" prefWidth="286.0" style="-fx-background-color: #3F2B63;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox layoutX="-1.0" layoutY="3.0" prefHeight="650.0" prefWidth="350.0" style="-fx-background-color: #3F2B63;" AnchorPane.bottomAnchor="-2.0" AnchorPane.topAnchor="2.0">
             <children>
-                <Pane prefHeight="154.0" prefWidth="279.0">
-                    <children>
-                        <Label layoutX="53.0" layoutY="51.0" prefHeight="53.0" prefWidth="180.0" text="TypeDash" textOverrun="WORD_ELLIPSIS">
-                            <font>
-                                <Font size="36.0" />
-                            </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop>
-                                            <color>
-                                                <Color />
-                                            </color>
-                                        </Stop>
-                                        <Stop offset="1.0">
-                                            <color>
-                                                <Color red="1.0" green="1.0" blue="1.0" />
-                                            </color>
-                                        </Stop>
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
-                            <font>
-                                <Font size="36.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </Pane>
-                <Button fx:id="statButton" mnemonicParsing="false" onAction="#viewGraph" prefHeight="67.0" prefWidth="290.0" style="-fx-background-color: #3F2B63;" text="View Graph" textAlignment="CENTER" textFill="WHITE">
+                <Pane prefHeight="150.0" prefWidth="350.0" />
+                <Button fx:id="statButton" mnemonicParsing="false" onAction="#viewGraph" prefHeight="75.0" prefWidth="350.0" style="-fx-background-color: #3F2B63;" text="View Graph" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -60,7 +30,7 @@
                     </effect>
                 </Button>
                 <Pane prefHeight="3.0" prefWidth="286.0" />
-                <Button fx:id="exitButton" mnemonicParsing="false" onAction="#exit" prefHeight="67.0" prefWidth="290.0" style="-fx-background-color: #3F2B63;" text="Exit" textAlignment="CENTER" textFill="WHITE">
+                <Button fx:id="exitButton" mnemonicParsing="false" onAction="#exit" prefHeight="75.0" prefWidth="350.0" style="-fx-background-color: #3F2B63;" text="Exit" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -73,63 +43,63 @@
                 </Button>
             </children>
         </VBox>
-        <ImageView fitHeight="159.0" fitWidth="574.0" layoutX="305.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+        <Button fx:id="button" layoutX="694.0" layoutY="572.0" mnemonicParsing="false" onAction="#tryagain" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Try Again" textFill="WHITE">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor></Button>
+        <Circle fill="DODGERBLUE" layoutX="732.0" layoutY="265.0" radius="75.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" />
+        <Circle fill="DODGERBLUE" layoutX="732.0" layoutY="438.0" radius="70.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" />
+        <Circle fill="#3f3131" layoutX="732.0" layoutY="265.0" radius="68.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#3f3131" layoutX="732.0" layoutY="438.0" radius="65.0" stroke="#3f3131" strokeType="INSIDE" />
+        <Label fx:id="wpmLabel" layoutX="700.0" layoutY="257.0" prefHeight="54.0" prefWidth="67.0" text="Label" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="28.0" />
+            </font>
+        </Label>
+        <Label fx:id="accuracyLabel" layoutX="701.0" layoutY="432.0" prefHeight="54.0" prefWidth="62.0" text="Label" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Circle fill="DODGERBLUE" layoutX="521.0" layoutY="438.0" radius="70.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="DODGERBLUE" layoutX="941.0" layoutY="438.0" radius="70.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#3f3131" layoutX="941.0" layoutY="438.0" radius="65.0" stroke="BLACK" strokeType="INSIDE" />
+        <Circle fill="#3f3131" layoutX="521.0" layoutY="438.0" radius="65.0" stroke="BLACK" strokeType="INSIDE" />
+        <Label fx:id="typedwordsLabel" layoutX="474.0" layoutY="436.0" prefHeight="35.0" prefWidth="122.0" text="Label" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label fx:id="wrongtwordsLabel" layoutX="887.0" layoutY="442.0" prefHeight="35.0" prefWidth="122.0" text="Label" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="698.0" layoutY="217.0" text="WPM" textFill="WHITE">
+            <font>
+                <Font size="28.0" />
+            </font>
+        </Label>
+        <Label layoutX="683.0" layoutY="405.0" text="Accuracy" textFill="WHITE">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="474.0" layoutY="409.0" text="Total Typed" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="887.0" layoutY="409.0" text="Wrong Typed" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="214.0" fitWidth="725.0" layoutX="385.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@TypeDash.png" />
             </image>
         </ImageView>
-        <Button fx:id="button" layoutX="573.0" layoutY="516.0" mnemonicParsing="false" onAction="#tryagain" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Try Again" textFill="WHITE">
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor></Button>
-        <Circle fill="DODGERBLUE" layoutX="592.0" layoutY="227.0" radius="75.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" />
-        <Circle fill="DODGERBLUE" layoutX="592.0" layoutY="395.0" radius="70.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" />
-        <Circle fill="#3f3131" layoutX="592.0" layoutY="227.0" radius="68.0" stroke="BLACK" strokeType="INSIDE" />
-        <Circle fill="#3f3131" layoutX="592.0" layoutY="395.0" radius="65.0" stroke="BLACK" strokeType="INSIDE" />
-        <Label fx:id="wpmLabel" layoutX="578.0" layoutY="217.0" prefHeight="54.0" prefWidth="62.0" text="Label" textAlignment="CENTER" textFill="WHITE">
-            <font>
-                <Font size="28.0" />
-            </font>
-        </Label>
-        <Label fx:id="accuracyLabel" layoutX="569.0" layoutY="384.0" prefHeight="54.0" prefWidth="62.0" text="Label" textAlignment="CENTER" textFill="WHITE">
-            <font>
-                <Font size="24.0" />
-            </font>
-        </Label>
-        <Circle fill="DODGERBLUE" layoutX="412.0" layoutY="395.0" radius="70.0" stroke="BLACK" strokeType="INSIDE" />
-        <Circle fill="DODGERBLUE" layoutX="768.0" layoutY="395.0" radius="70.0" stroke="BLACK" strokeType="INSIDE" />
-        <Circle fill="#3f3131" layoutX="768.0" layoutY="395.0" radius="65.0" stroke="BLACK" strokeType="INSIDE" />
-        <Circle fill="#3f3131" layoutX="412.0" layoutY="395.0" radius="65.0" stroke="BLACK" strokeType="INSIDE" />
-        <Label fx:id="typedwordsLabel" layoutX="359.0" layoutY="393.0" prefHeight="35.0" prefWidth="122.0" text="Label" textAlignment="CENTER" textFill="WHITE">
-            <font>
-                <Font size="24.0" />
-            </font>
-        </Label>
-        <Label fx:id="wrongtwordsLabel" layoutX="715.0" layoutY="393.0" prefHeight="35.0" prefWidth="122.0" text="Label" textAlignment="CENTER" textFill="WHITE">
-            <font>
-                <Font size="24.0" />
-            </font>
-        </Label>
-        <Label layoutX="558.0" layoutY="177.0" text="WPM" textFill="WHITE">
-            <font>
-                <Font size="28.0" />
-            </font>
-        </Label>
-        <Label layoutX="544.0" layoutY="358.0" text="Accuracy" textFill="WHITE">
-            <font>
-                <Font size="24.0" />
-            </font>
-        </Label>
-        <Label layoutX="365.0" layoutY="362.0" text="Total Typed" textFill="WHITE">
-            <font>
-                <Font size="18.0" />
-            </font>
-        </Label>
-        <Label layoutX="713.0" layoutY="362.0" text="Wrong Typed" textFill="WHITE">
-            <font>
-                <Font size="18.0" />
-            </font>
-        </Label>
     </children>
     <effect>
         <Blend />

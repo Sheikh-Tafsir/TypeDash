@@ -180,7 +180,7 @@ public class Gamecontroller {
 
     private int countAll = 0;
     private int counter = 0;
-    private int timer = 5;
+    private int timer = 60;
 
     Runnable r = new Runnable() {
         @Override
