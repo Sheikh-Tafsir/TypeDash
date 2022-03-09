@@ -6,50 +6,52 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
 import static com.tonevellah.demofx1.Scene1Controller.clr;
 
-public class Scene7Controller {
-
+public class Scene4Controller
+{
     @FXML
     private Stage stage;
     private Scene scene;
     private Parent root;
 
-    @FXML
-    TextArea customtext;
+    public void playGame(ActionEvent e) throws IOException {
+        if(clr==0)root = FXMLLoader.load(getClass().getResource("Scene5.fxml"));
+        else root = FXMLLoader.load(getClass().getResource("Scene15.fxml"));
+        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void custom(ActionEvent e)throws IOException {
 
+       // System.out.println("Custom");
+        if(clr==0)root = FXMLLoader.load(getClass().getResource("Scene7.fxml"));
+        else root = FXMLLoader.load(getClass().getResource("Scene17.fxml"));
+        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void programing(ActionEvent e)throws IOException {
 
-    public void gotogame(ActionEvent e) throws IOException{
-
-        //customtext.setWrapText(true);
-        String ctext = customtext.getText();
-        customtext.setWrapText(true);
-
+        //System.out.println("Programing");
         try {
             FileWriter fileWriter = new FileWriter("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/Levels.txt");
-            fileWriter.write("5");
+            fileWriter.write("4");
             fileWriter.close();
-            System.out.println("5");
+            System.out.println("4");
         }
         catch(IOException ex){
             ex.printStackTrace();
-        }
-
-        try {
-            FileWriter fileWriter = new FileWriter("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/custext.txt");
-            fileWriter.write(ctext);
-            fileWriter.close();
-            System.out.println("custext");
-        }
-        catch(IOException exc){
-            exc.printStackTrace();
         }
 
         if(clr==0){
@@ -75,14 +77,12 @@ public class Scene7Controller {
             stage.show();
         }
 
-
     }
-    public void goback(ActionEvent event) throws IOException {
-        if(clr==0)root = FXMLLoader.load(getClass().getResource("Scene4.fxml"));
-        else root = FXMLLoader.load(getClass().getResource("Scene14.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+    public void graph(ActionEvent e) {
+        System.out.println("Graph");
+    }
+    public void exit(ActionEvent e) {
+        System.exit(0);
+        //System.out.println("Exit");
     }
 }

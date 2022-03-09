@@ -19,14 +19,12 @@ import java.io.IOException;
 
 import static com.tonevellah.demofx1.Scene1Controller.clr;
 
-
-public class Scene2Controller {
+public class Scene3Controller {
     private Stage stage;
     private Scene scene;
     private Parent root;
 
     public void menu(ActionEvent event) throws IOException {
-        System.out.println(clr);
         if(clr==0)root = FXMLLoader.load(getClass().getResource("Scene4.fxml"));
         else root = FXMLLoader.load(getClass().getResource("Scene14.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
