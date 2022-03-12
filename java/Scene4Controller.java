@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -15,6 +16,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import static com.tonevellah.demofx1.Scene1Controller.clr;
+import static com.tonevellah.demofx1.Scene1Controller.lvl;
 
 public class Scene4Controller
 {
@@ -22,6 +24,12 @@ public class Scene4Controller
     private Stage stage;
     private Scene scene;
     private Parent root;
+    @FXML
+    Text advc;
+
+    public void tips(String str){
+        advc.setText(str);
+    }
 
     public void playGame(ActionEvent e) throws IOException {
         if(clr==0)root = FXMLLoader.load(getClass().getResource("Scene5.fxml"));
@@ -33,6 +41,7 @@ public class Scene4Controller
     }
     public void custom(ActionEvent e)throws IOException {
 
+        lvl=5;
        // System.out.println("Custom");
         if(clr==0)root = FXMLLoader.load(getClass().getResource("Scene7.fxml"));
         else root = FXMLLoader.load(getClass().getResource("Scene17.fxml"));
@@ -43,6 +52,7 @@ public class Scene4Controller
     }
     public void programing(ActionEvent e)throws IOException {
 
+        lvl=4;
         //System.out.println("Programing");
         try {
             FileWriter fileWriter = new FileWriter("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/Levels.txt");

@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: #3F3131;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tonevellah.demofx1.Gamecontroller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: #3F3131;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tonevellah.demofx1.Scene8Controller">
     <children>
         <Text fx:id="wordsPerMin" fill="WHITE" layoutX="677.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
             <font>
@@ -22,7 +22,7 @@
             <font>
                 <Font size="24.0" />
             </font></Text>
-        <Text fx:id="seconds" fill="WHITE" layoutX="548.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="60" textAlignment="CENTER">
+        <Text fx:id="seconds" fill="WHITE" layoutX="548.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" textAlignment="CENTER">
             <font>
                 <Font size="24.0" />
             </font></Text>
@@ -96,7 +96,7 @@
                 <Font size="20.0" />
             </font>
         </Label>
-        <Label layoutX="509.0" layoutY="188.0" text="Time Left" textFill="WHITE">
+        <Label layoutX="509.0" layoutY="188.0" text="Time Passed" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
@@ -109,4 +109,3 @@
         <TextFlow fx:id="textflow" layoutX="305.0" layoutY="262.0" prefHeight="200.0" prefWidth="759.0" style="-fx-background-color: #3F3131;" />
     </children>
 </AnchorPane>
-

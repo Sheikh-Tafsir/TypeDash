@@ -14,9 +14,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tonevellah.demofx1.Scene5Controller">
     <children>
-        <Button layoutX="773.0" layoutY="482.0" mnemonicParsing="false" onAction="#gotogame" prefHeight="37.0" prefWidth="95.0" style="-fx-background-color: #0598ff;" text="Start" textFill="#faf4f4">
+        <Button layoutX="759.0" layoutY="482.0" mnemonicParsing="false" onAction="#gotogame" prefHeight="40.0" prefWidth="106.0" style="-fx-background-color: #0598ff;" text="Start Test" textFill="#faf4f4">
             <font>
-                <Font size="14.0" />
+                <Font size="18.0" />
             </font>
             <cursor>
                 <Cursor fx:constant="HAND" />

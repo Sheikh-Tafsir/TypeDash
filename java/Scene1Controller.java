@@ -15,6 +15,7 @@ public class Scene1Controller {
     private Scene scene;
     private Parent root;
     static public int clr=0;
+    static public int lvl=1;
 
     public void changetheme(ActionEvent event) throws IOException {
         if(clr==0){

@@ -90,7 +90,7 @@
                 <Font size="40.0" />
             </font>
         </Text>
-        <Text fill="#0095ff" layoutX="568.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How Fast Is Your Typing Speed?" wrappingWidth="359.6624755859375">
+        <Text fx:id="advc" fill="#0095ff" layoutX="439.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How Fast Is Your Typing Speed?" textAlignment="CENTER" wrappingWidth="616.4625244140625">
             <font>
                 <Font size="24.0" />
             </font>

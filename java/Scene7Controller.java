@@ -53,10 +53,10 @@ public class Scene7Controller {
         }
 
         if(clr==0){
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene8.fxml"));
             root = loader.load();
             stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-            Gamecontroller gamecontroller = loader.getController();
+            Scene8Controller gamecontroller = loader.getController();
             gamecontroller.takeGivenLine();
             gamecontroller.setfirstword();
             scene = new Scene(root);
@@ -64,10 +64,10 @@ public class Scene7Controller {
             stage.show();
         }
         else{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("gameb.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene18.fxml"));
             root = loader.load();
             stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-            Gamecontroller gamecontroller = loader.getController();
+            Scene8Controller gamecontroller = loader.getController();
             gamecontroller.takeGivenLine();
             gamecontroller.setfirstword();
             scene = new Scene(root);

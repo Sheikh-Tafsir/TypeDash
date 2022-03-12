@@ -19,6 +19,7 @@ import java.net.URL;
 import java.util.*;
 
 import static com.tonevellah.demofx1.Scene1Controller.clr;
+import static com.tonevellah.demofx1.Scene1Controller.lvl;
 
 
 public class Scene5Controller {
@@ -41,7 +42,7 @@ public class Scene5Controller {
         if(rButton1.isSelected()) {
 
             //myLabel.setText(rButton1.getText());
-            try {
+            /*try {
                 FileWriter fileWriter = new FileWriter("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/Levels.txt");
                 fileWriter.write("1");
                 fileWriter.close();
@@ -49,12 +50,13 @@ public class Scene5Controller {
             }
             catch(IOException e){
                 e.printStackTrace();
-            }
+            }*/
+            lvl=1;
         }
         else if(rButton2.isSelected()) {
 
             //myLabel.setText(rButton2.getText());
-            try {
+            /*try {
                 FileWriter fileWriter = new FileWriter("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/Levels.txt");
                 fileWriter.write("2");
                 fileWriter.close();
@@ -62,12 +64,13 @@ public class Scene5Controller {
             }
             catch(IOException e){
                 e.printStackTrace();
-            }
+            }*/
+            lvl=2;
         }
         else if(rButton3.isSelected()) {
 
             //myLabel.setText(rButton3.getText());
-            try {
+            /*try {
                 FileWriter fileWriter = new FileWriter("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/Levels.txt");
                 fileWriter.write("3");
                 fileWriter.close();
@@ -75,7 +78,8 @@ public class Scene5Controller {
             }
             catch(IOException e){
                 e.printStackTrace();
-            }
+            }*/
+            lvl=3;
         }
 
     }

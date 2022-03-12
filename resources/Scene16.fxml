@@ -51,7 +51,7 @@
         <Circle fill="DODGERBLUE" layoutX="732.0" layoutY="438.0" radius="70.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" />
         <Circle fill="#3f3131" layoutX="732.0" layoutY="265.0" radius="68.0" stroke="BLACK" strokeType="INSIDE" />
         <Circle fill="#3f3131" layoutX="732.0" layoutY="438.0" radius="65.0" stroke="#3f3131" strokeType="INSIDE" />
-        <Label fx:id="wpmLabel" layoutX="700.0" layoutY="257.0" prefHeight="54.0" prefWidth="67.0" text="Label" textAlignment="CENTER" textFill="WHITE">
+        <Label fx:id="wpmLabel" layoutX="714.0" layoutY="257.0" prefHeight="54.0" prefWidth="67.0" text="Label" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font size="28.0" />
             </font>
