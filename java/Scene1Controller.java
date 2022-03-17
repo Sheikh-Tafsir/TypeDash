@@ -16,6 +16,7 @@ public class Scene1Controller {
     private Parent root;
     static public int clr=0;
     static public int lvl=1;
+    static public int car=1;
 
     public void changetheme(ActionEvent event) throws IOException {
         if(clr==0){
@@ -61,16 +62,6 @@ public class Scene1Controller {
         System.exit(0);
     }
     public void wpmrush(ActionEvent e) throws IOException{
-        /*FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
-        root = loader.load();
-        //root = FXMLLoader.load(getClass().getResource("game.fxml"));
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Gamecontroller gamecontroller = loader.getController();
-        gamecontroller.takeGivenLine();
-        gamecontroller.setfirstword();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();*/
 
         if(clr==0)root = FXMLLoader.load(getClass().getResource("Scene5.fxml"));
         else root = FXMLLoader.load(getClass().getResource("Scene15.fxml"));

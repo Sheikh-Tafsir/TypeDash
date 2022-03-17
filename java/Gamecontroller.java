@@ -225,6 +225,10 @@ public class Gamecontroller {
                 timer -= 1;
                 wrong.setVisible(false);
                 correct.setVisible(false);
+
+                double tm=60;
+                double wpm= (counter/(tm-timer))*tm;
+                wordsPerMin.setText(String.valueOf((int)wpm));
             }
 
             else {
@@ -275,12 +279,18 @@ public class Gamecontroller {
             countAll++;
             if (s.equals(real)) {
                 counter++;
-                wordsPerMin.setText(String.valueOf(counter));
+                double tm=60;
+                double wpm= (counter/(tm-timer))*tm;
+                wordsPerMin.setText(String.valueOf((int)wpm));
 
                 wrong.setVisible(false);
                 correct.setVisible(true);
             }
             else{
+                double tm=60;
+                double wpm= (counter/(tm-timer))*tm;
+                wordsPerMin.setText(String.valueOf((int)wpm));
+
                 wrong.setVisible(true);
                 correct.setVisible(false);
             }
@@ -294,8 +304,6 @@ public class Gamecontroller {
             if(fir>=3)secpreviousProgramWord.setText(givenwords[fir-2]);
             else secpreviousProgramWord.setText("here:- ");
 
-            //textflow = new TextFlow();
-            //textflow.getChildren().remove(redText,greenText);
 
             int lim=0;
             if(fir<35)lim=35;

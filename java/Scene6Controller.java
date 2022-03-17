@@ -57,7 +57,6 @@ public class Scene6Controller {
     }
     public void exit(ActionEvent e) {
 
-        //System.out.println("Exit");
         System.exit(0);
     }
 }

@@ -4,12 +4,15 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -20,9 +23,9 @@ import java.util.*;
 
 import static com.tonevellah.demofx1.Scene1Controller.clr;
 import static com.tonevellah.demofx1.Scene1Controller.lvl;
+import static com.tonevellah.demofx1.Scene1Controller.car;
 
-
-public class Scene5Controller {
+public class Scene5Controller implements Initializable {
 
     @FXML
     private Stage stage;
@@ -35,50 +38,46 @@ public class Scene5Controller {
     public RadioButton rButton2;
     @FXML
     public RadioButton rButton3;
+    @FXML
+    private ChoiceBox<String> myChoiceBox=new ChoiceBox<String>();
+    private String[] cars = {"Yellow","Red","Pink"};
+    int foodf=0;
 
+    /*public void stlevel(MouseEvent me) {
+        if(foodf==0) {
+            myChoiceBox.getItems().addAll(food);
+            myChoiceBox.setOnAction(this::getFood);
+            foodf++;
+
+        }
+    }*/
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+
+        myChoiceBox.getItems().addAll(cars);
+        myChoiceBox.setOnAction(this::getFood);
+        myChoiceBox.setStyle("-fx-font: 20 arial;");
+    }
+    public void getFood(ActionEvent event) {
+
+        String mytime = myChoiceBox.getValue();
+        if(mytime=="Yellow") car=1;
+        else if(mytime=="Red") car=2;
+        else if(mytime=="Pink") car=3;
+    }
 
     public void getLevel(ActionEvent event) {
 
         if(rButton1.isSelected()) {
 
-            //myLabel.setText(rButton1.getText());
-            /*try {
-                FileWriter fileWriter = new FileWriter("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/Levels.txt");
-                fileWriter.write("1");
-                fileWriter.close();
-                System.out.println("1");
-            }
-            catch(IOException e){
-                e.printStackTrace();
-            }*/
             lvl=1;
         }
         else if(rButton2.isSelected()) {
 
-            //myLabel.setText(rButton2.getText());
-            /*try {
-                FileWriter fileWriter = new FileWriter("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/Levels.txt");
-                fileWriter.write("2");
-                fileWriter.close();
-                System.out.println("2");
-            }
-            catch(IOException e){
-                e.printStackTrace();
-            }*/
             lvl=2;
         }
         else if(rButton3.isSelected()) {
 
-            //myLabel.setText(rButton3.getText());
-            /*try {
-                FileWriter fileWriter = new FileWriter("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/Levels.txt");
-                fileWriter.write("3");
-                fileWriter.close();
-                System.out.println("3");
-            }
-            catch(IOException e){
-                e.printStackTrace();
-            }*/
             lvl=3;
         }
 
@@ -88,10 +87,11 @@ public class Scene5Controller {
     public void gotogame(ActionEvent e) throws IOException{
 
         if(clr==0){
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene25.fxml"));
             root = loader.load();
             stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-            Gamecontroller gamecontroller = loader.getController();
+            //Gamecontroller gamecontroller = loader.getController();
+            Scene25Controller gamecontroller = loader.getController();
             gamecontroller.takeGivenLine();
             gamecontroller.setfirstword();
             scene = new Scene(root);

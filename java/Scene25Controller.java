@@ -1,5 +1,4 @@
 package com.tonevellah.demofx1;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,7 +7,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Control;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -17,17 +18,16 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
-import static com.tonevellah.demofx1.Scene1Controller.clr;
-import static com.tonevellah.demofx1.Scene1Controller.lvl;
+import static com.tonevellah.demofx1.Scene1Controller.*;
 
-public class Scene8Controller {
+public class Scene25Controller {
     private int wordCounter = 0;
     private int first = 0;
     int fir = 0;
@@ -78,25 +78,51 @@ public class Scene8Controller {
     @FXML
     private Text greenText;
 
+    @FXML
+    private ImageView imgview;
+    private double x1;
+    private double y1;
+    /*@FXML
+    private ImageView imgview2;
+    private double x2;
+    private double y2;
+    @FXML
+    private ImageView imgview3;
+    private double x3;
+    private double y3;*/
+
+
     public String givenstring =takeGivenLine();
 
     public String takeGivenLine(){
+        int max=50,min=40;
+        max=lvl;
         System.out.println("level" + lvl);
-            String st = "";
-            try {
-                File file = new File("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/custext.txt");
-                Scanner fileinput = new Scanner(file);
+        min = max - 1;
+        max *= 7;
+        min *= 7;
+        String st = "";
+        int i = 0;
+        int ran = (int) Math.floor(Math.random() * (max - min + 1) + min);
 
-                while (fileinput.hasNext()) {
-                    String s = fileinput.nextLine();
+        System.out.println("random" + ran);
+        try {
+            File file = new File("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/Lines.txt");
+            Scanner fileinput = new Scanner(file);
+            while (fileinput.hasNext()) {
+                String s = fileinput.nextLine();
+                if (i >= ran) {
                     st += s;
                 }
-                fileinput.close();
+                i++;
             }
-            catch(Exception e){
-                System.out.println(e);
-            }
-            return st;
+            fileinput.close();
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }
+        return st;
+        //}
     }
 
     public void customtext(String ctext) {
@@ -119,9 +145,7 @@ public class Scene8Controller {
         blueText.setFill(Color.BLUE);
 
         String st=" ";
-        int n=35;
-        if(givenwords.length<35)n=givenwords.length;
-        for(int ii=1;ii<n;ii++){
+        for(int ii=1;ii<35;ii++){
             st+=givenwords[ii] + " ";
         }
         greenText = new Text(st);
@@ -131,12 +155,25 @@ public class Scene8Controller {
         textflow.getChildren().addAll(greyText,blueText, greenText);
         textflow.setStyle("-fx-font: 28 arial;");
         textflow.setPrefWidth(700);
+        //textflow.setMaxHeight(Control.USE_PREF_SIZE);
 
         textflow.setPadding(new Insets(15, 15, 15, 15));
 
         playAgain.setVisible(false);
         wrong.setVisible(false);
         correct.setVisible(false);
+
+        System.out.println("car "+ car);
+        if(car==1){
+            imgview.setImage(new Image ("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/car_yellow.png"));
+        }
+        else if(car==2){
+            imgview.setImage(new Image ("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/car_red.png"));
+        }
+        else if(car==3){
+            imgview.setImage(new Image ("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/car_pink.png"));
+        }
+
     }
 
     public void playAgain(ActionEvent e) throws IOException {
@@ -144,10 +181,11 @@ public class Scene8Controller {
         if(clr==0) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene6.fxml"));
             root = loader.load();
+            //root = FXMLLoader.load(getClass().getResource("game.fxml"));
             stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             Scene6Controller scene6controller = loader.getController();
             int acc = (int) Math.round((counter * 1.0 / countAll) * 100);
-            scene6controller.displayResult(counter/(timer/60), acc, countAll, countAll - counter);
+            scene6controller.displayResult(counter, acc, countAll, countAll - counter);
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
@@ -155,10 +193,11 @@ public class Scene8Controller {
         else{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene16.fxml"));
             root = loader.load();
+            //root = FXMLLoader.load(getClass().getResource("game.fxml"));
             stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             Scene6Controller scene6controller = loader.getController();
             int acc = (int) Math.round((counter * 1.0 / countAll) * 100);
-            scene6controller.displayResult(counter/(timer/60), acc, countAll, countAll - counter);
+            scene6controller.displayResult(counter, acc, countAll, countAll - counter);
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
@@ -169,29 +208,49 @@ public class Scene8Controller {
 
     private int countAll = 0;
     private int counter = 0;
-    private int timer = 0;
+    private int timer = 60;
+    private int speed = 5;
 
     Runnable r = new Runnable() {
         @Override
         public void run() {
-            System.out.println(countAll +" "+ givenwords.length);
-            if (timer >= 0) {
+            if (timer > -1) {
                 seconds.setText(String.valueOf(timer));
+                timer -= 1;
                 wrong.setVisible(false);
                 correct.setVisible(false);
-                timer += 1;
+                imgview.setY(y1-=speed);
+
+                double tm=60;
+                double wpm= Math.ceil((counter/(tm-timer))*tm);
+                wordsPerMin.setText(String.valueOf((int)wpm));
             }
-            if (countAll >= givenwords.length) {
-                userWord.setDisable(true);
-                userWord.setText("Game over");
-                playAgain.setVisible(true);
-                playAgain.setVisible(true);
-                playAgain.setDisable(false);
-                executor.shutdown();
+
+            else {
+                if (timer == -1) {
+                    userWord.setDisable(true);
+                    userWord.setText("Game over");
+                    playAgain.setVisible(true);
+
+                    /*try {
+                        FileWriter myWriter = new FileWriter(saveData);
+                        myWriter.write(countAll +";");
+                        myWriter.write(counter +";");
+                        myWriter.write(String.valueOf(countAll-counter));
+                        myWriter.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }*/
+                }
+
+                if (timer == -4) {
+                    playAgain.setVisible(true);
+                    playAgain.setDisable(false);
+                    executor.shutdown();
+                }
+
                 timer -= 1;
             }
-
-
         }
     };
 
@@ -216,47 +275,40 @@ public class Scene8Controller {
             if (s.equals(real)) {
                 counter++;
                 double tm=60;
-                double wpm= (counter/(timer/tm))*tm;
+                double wpm= (counter/(tm-timer))*tm;
                 wordsPerMin.setText(String.valueOf((int)wpm));
 
                 wrong.setVisible(false);
                 correct.setVisible(true);
+
+                speed=(int)wpm/5;
             }
             else{
+                double tm=60;
+                double wpm= (counter/(tm-timer))*tm;
+                wordsPerMin.setText(String.valueOf((int)wpm));
+
                 wrong.setVisible(true);
                 correct.setVisible(false);
+
+                speed=(int)wpm/5;
+
             }
+
+
             userWord.setText("");
             accuracy.setText(String.valueOf(Math.round((counter*1.0/countAll)*100)) +"%");
 
-            if(fir+2<givenwords.length) {
-                programWord.setText(givenwords[fir]);
-                secondProgramWord.setText(givenwords[fir + 1]);
-                previousProgramWord.setText(givenwords[fir - 1]);
-            }
-            else if(fir+1<givenwords.length) {
-                programWord.setText(givenwords[fir]);
-                secondProgramWord.setText(givenwords[fir + 1]);
-                previousProgramWord.setText("out");
-            }
-            else if(fir<givenwords.length) {
-                programWord.setText(givenwords[fir]);
-                secondProgramWord.setText("out");
-                previousProgramWord.setText("of");
-            }
-            else{
-                programWord.setText("out");
-                secondProgramWord.setText("of");
-                previousProgramWord.setText("bounds");
-            }
+            programWord.setText(givenwords[fir]);
+            secondProgramWord.setText(givenwords[fir+1]);
+            previousProgramWord.setText(givenwords[fir-1]);
 
             if(fir>=3)secpreviousProgramWord.setText(givenwords[fir-2]);
             else secpreviousProgramWord.setText("here:- ");
 
 
             int lim=0;
-            if(fir<35 && givenwords.length>=35)lim=35;
-            else if(fir<35 && givenwords.length<35)lim=givenwords.length;
+            if(fir<35)lim=35;
             else if(fir<35)lim=35;
             else if(fir<70)lim=70;
             else if(fir<105)lim=105;
@@ -264,37 +316,26 @@ public class Scene8Controller {
             else if(fir<175)lim=175;
             textflow.getChildren().clear();
             String st="";
-
-            if(lim%35==0) {
-                for (int ii = lim - 35; ii < fir; ii++) {
-                    st += givenwords[ii] + " ";
-                }
+            for(int ii=lim-35;ii<fir;ii++){
+                st+=givenwords[ii] + " ";
             }
-            else{
-                for (int ii = lim - (lim%35); ii < fir; ii++) {
-                    st += givenwords[ii] + " ";
-                }
+            greyText = new Text(st);
+            greyText.setFill(Color.GREY);
+
+            blueText = new Text(givenwords[fir]);
+            blueText.setFill(Color.BLUE);
+
+            st=" ";
+            for(int ii=fir+1;ii<lim;ii++){
+                st+=givenwords[ii] + " ";
             }
-            if(fir<givenwords.length){
-                greyText = new Text(st);
-                greyText.setFill(Color.GREY);
+            greenText = new Text(st);
+            if(clr==0)greenText.setFill(Color.BLACK);
+            else greenText.setFill(Color.WHITE);
 
-                blueText = new Text(givenwords[fir]);
-                blueText.setFill(Color.BLUE);
-
-                st=" ";
-                for(int ii=fir+1;ii<lim;ii++){
-                    st+=givenwords[ii] + " ";
-                }
-                greenText = new Text(st);
-                if(clr==0)greenText.setFill(Color.BLACK);
-                else greenText.setFill(Color.WHITE);
-
-                textflow.getChildren().addAll(greyText,blueText,greenText);
-                textflow.setStyle("-fx-font: 28 arial;");
-                textflow.setPrefWidth(700);
-            }
-
+            textflow.getChildren().addAll(greyText,blueText,greenText);
+            textflow.setStyle("-fx-font: 28 arial;");
+            textflow.setPrefWidth(700);
         }
 
     }
