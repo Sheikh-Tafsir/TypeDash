@@ -1,6 +1,6 @@
 <h1 align="center">TypeDash</h1>
 <p align="center">
-   <img src="https://img.shields.io/badge/language-![Java](https://img.shields.io/badge/-Java-000000?style=flat&logo=java)-green?style"/>
+   <img src="https://img.shields.io/badge/language-Java-green?style"/>
    <img src="https://img.shields.io/github/license/Sheikh-Tafsir/TypeDash"/>
    <img src="https://img.shields.io/github/stars/Sheikh-Tafsir/TypeDash"/>
    <img src="https://img.shields.io/github/forks/Sheikh-Tafsir/TypeDash"/>
