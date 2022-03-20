@@ -68,6 +68,11 @@
                   <Image url="@car_yellow.png" />
                </image>
             </ImageView>
+            <Label fx:id="won" layoutX="24.0" layoutY="128.0" text="YOU WON" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
          </children></Pane>
         <TextFlow fx:id="textflow" layoutX="305.0" layoutY="262.0" prefHeight="200.0" prefWidth="759.0" />
       <ImageView fitHeight="214.0" fitWidth="725.0" layoutX="385.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
@@ -90,17 +95,17 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Text fx:id="wordsPerMin" layoutX="687.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+      <Text fx:id="wordsPerMin" layoutX="687.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text fx:id="accuracy" layoutX="825.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER">
+      <Text fx:id="accuracy" layoutX="821.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text fx:id="seconds" layoutX="558.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="60" textAlignment="CENTER">
+      <Text fx:id="seconds" layoutX="556.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="60" textAlignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>

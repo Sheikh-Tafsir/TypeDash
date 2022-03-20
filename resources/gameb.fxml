@@ -14,18 +14,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: #3F3131;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tonevellah.demofx1.Gamecontroller">
     <children>
-        <Text fx:id="wordsPerMin" fill="WHITE" layoutX="677.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
-            <font>
-                <Font size="24.0" />
-            </font></Text>
-        <Text fx:id="accuracy" fill="WHITE" layoutX="815.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER">
-            <font>
-                <Font size="24.0" />
-            </font></Text>
-        <Text fx:id="seconds" fill="WHITE" layoutX="548.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="60" textAlignment="CENTER">
-            <font>
-                <Font size="24.0" />
-            </font></Text>
         <TextField fx:id="userWord" layoutX="548.0" layoutY="462.0" onKeyPressed="#startGame" prefHeight="61.0" prefWidth="283.0" promptText="Go">
             <font>
                 <Font size="24.0" />
@@ -70,43 +58,57 @@
         </Text>
         <Pane prefHeight="650.0" prefWidth="275.0" style="-fx-background-color: #3F2B63;">
             <children>
-                <ImageView fitHeight="281.0" fitWidth="310.0" layoutX="91.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="650.0" fitWidth="164.0" layoutX="60.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@TypeDash1.png" />
+                        <Image url="@track1.jpg" />
                     </image>
                 </ImageView>
-                <Text fill="WHITE" layoutX="61.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Why Here?">
+                <ImageView fx:id="imgview" fitHeight="136.0" fitWidth="82.0" layoutX="98.0" layoutY="529.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@car_yellow.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="won" layoutX="24.0" layoutY="128.0" text="YOU WON" textAlignment="CENTER" textFill="WHITE">
                     <font>
-                        <Font size="28.0" />
+                        <Font size="48.0" />
                     </font>
-                </Text>
-                <Text fill="WHITE" layoutX="57.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Try our app Today">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Text>
+                </Label>
             </children></Pane>
-        <Label layoutX="659.0" layoutY="188.0" text="WPM" textFill="WHITE">
-            <font>
-                <Font size="20.0" />
-            </font>
-        </Label>
-        <Label layoutX="788.0" layoutY="188.0" text="Accuracy" textFill="WHITE">
-            <font>
-                <Font size="20.0" />
-            </font>
-        </Label>
-        <Label layoutX="509.0" layoutY="188.0" text="Time Left" textFill="WHITE">
-            <font>
-                <Font size="20.0" />
-            </font>
-        </Label>
-        <ImageView fitHeight="214.0" fitWidth="725.0" layoutX="375.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+        <TextFlow fx:id="textflow" layoutX="305.0" layoutY="262.0" prefHeight="200.0" prefWidth="759.0" />
+        <ImageView fitHeight="214.0" fitWidth="725.0" layoutX="385.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@TypeDash.png" />
             </image>
         </ImageView>
-        <TextFlow fx:id="textflow" layoutX="305.0" layoutY="262.0" prefHeight="200.0" prefWidth="759.0" style="-fx-background-color: #3F3131;" />
+        <Label layoutX="519.0" layoutY="198.0" text="Time Left" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="669.0" layoutY="198.0" text="WPM" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="798.0" layoutY="198.0" text="Accuracy" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Text fx:id="wordsPerMin" fill="WHITE" layoutX="687.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
+        <Text fx:id="accuracy" fill="WHITE" layoutX="821.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
+        <Text fx:id="seconds" fill="WHITE" layoutX="556.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="60" textAlignment="CENTER">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
     </children>
 </AnchorPane>
-

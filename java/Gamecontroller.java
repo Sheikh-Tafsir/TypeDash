@@ -9,7 +9,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Control;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -25,8 +27,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static com.tonevellah.demofx1.Scene1Controller.clr;
-import static com.tonevellah.demofx1.Scene1Controller.lvl;
+import static com.tonevellah.demofx1.Scene1Controller.*;
+import static com.tonevellah.demofx1.Scene1Controller.car;
 
 public class Gamecontroller {
     private int wordCounter = 0;
@@ -79,44 +81,21 @@ public class Gamecontroller {
     @FXML
     private Text greenText;
 
+    @FXML
+    private ImageView imgview;
+    private double x1;
+    private double y1;
+
+    @FXML
+    private Label won;
+
+
     public String givenstring =takeGivenLine();
 
     public String takeGivenLine(){
         int max=50,min=40;
-        /*try {
-            File file = new File("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/Levels.txt");
-            Scanner fileinput = new Scanner(file);
-
-            while (fileinput.hasNext()) {
-                String s = fileinput.nextLine();
-                max=Integer.valueOf(s);
-                System.out.println("reading"+ s);
-            }
-            fileinput.close();
-        }
-        catch(Exception e){
-            System.out.println(e);
-        }*/
         max=lvl;
         System.out.println("level" + lvl);
-        /*if(max==5){
-            String st = "";
-            try {
-                File file = new File("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/custext.txt");
-                Scanner fileinput = new Scanner(file);
-
-                while (fileinput.hasNext()) {
-                    String s = fileinput.nextLine();
-                    st += s;
-                }
-                fileinput.close();
-            }
-            catch(Exception e){
-                System.out.println(e);
-            }
-            return st;
-        }
-        else {*/
         min = max - 1;
         max *= 7;
         min *= 7;
@@ -181,6 +160,19 @@ public class Gamecontroller {
         playAgain.setVisible(false);
         wrong.setVisible(false);
         correct.setVisible(false);
+
+        System.out.println("car "+ car);
+        if(car==1){
+            imgview.setImage(new Image("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/car_yellow.png"));
+        }
+        else if(car==2){
+            imgview.setImage(new Image ("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/car_red.png"));
+        }
+        else if(car==3){
+            imgview.setImage(new Image ("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/car_pink.png"));
+        }
+        won.setVisible(false);
+
     }
 
     public void playAgain(ActionEvent e) throws IOException {
@@ -216,6 +208,7 @@ public class Gamecontroller {
     private int countAll = 0;
     private int counter = 0;
     private int timer = 60;
+    private int speed = 5;
 
     Runnable r = new Runnable() {
         @Override
@@ -225,9 +218,12 @@ public class Gamecontroller {
                 timer -= 1;
                 wrong.setVisible(false);
                 correct.setVisible(false);
+                imgview.setY(y1-=speed);
+                if(y1<=-470)won.setVisible(true);
+
 
                 double tm=60;
-                double wpm= (counter/(tm-timer))*tm;
+                double wpm= Math.ceil((counter/(tm-timer))*tm);
                 wordsPerMin.setText(String.valueOf((int)wpm));
             }
 
@@ -285,6 +281,8 @@ public class Gamecontroller {
 
                 wrong.setVisible(false);
                 correct.setVisible(true);
+
+                speed=(int)wpm/5;
             }
             else{
                 double tm=60;
@@ -293,7 +291,12 @@ public class Gamecontroller {
 
                 wrong.setVisible(true);
                 correct.setVisible(false);
+
+                speed=(int)wpm/5;
+
             }
+
+
             userWord.setText("");
             accuracy.setText(String.valueOf(Math.round((counter*1.0/countAll)*100)) +"%");
 
@@ -339,3 +342,4 @@ public class Gamecontroller {
     }
 
 }
+

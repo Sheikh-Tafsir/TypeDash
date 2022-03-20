@@ -87,11 +87,11 @@ public class Scene5Controller implements Initializable {
     public void gotogame(ActionEvent e) throws IOException{
 
         if(clr==0){
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene25.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
             root = loader.load();
             stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-            //Gamecontroller gamecontroller = loader.getController();
-            Scene25Controller gamecontroller = loader.getController();
+            Gamecontroller gamecontroller = loader.getController();
+            //Scene25Controller gamecontroller = loader.getController();
             gamecontroller.takeGivenLine();
             gamecontroller.setfirstword();
             scene = new Scene(root);

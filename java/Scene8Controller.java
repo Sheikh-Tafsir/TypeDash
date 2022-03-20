@@ -141,13 +141,17 @@ public class Scene8Controller {
 
     public void playAgain(ActionEvent e) throws IOException {
         //System.out.println("ttt");
+        double tm=60;
+        double wpm= Math.ceil(((double)counter/(double)timer)*tm);
+        int w=(int)wpm;
+
         if(clr==0) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene6.fxml"));
             root = loader.load();
             stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             Scene6Controller scene6controller = loader.getController();
             int acc = (int) Math.round((counter * 1.0 / countAll) * 100);
-            scene6controller.displayResult(counter/(timer/60), acc, countAll, countAll - counter);
+            scene6controller.displayResult(w, acc, countAll, countAll - counter);
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
@@ -158,7 +162,7 @@ public class Scene8Controller {
             stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             Scene6Controller scene6controller = loader.getController();
             int acc = (int) Math.round((counter * 1.0 / countAll) * 100);
-            scene6controller.displayResult(counter/(timer/60), acc, countAll, countAll - counter);
+            scene6controller.displayResult(w, acc, countAll, countAll - counter);
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
@@ -180,6 +184,9 @@ public class Scene8Controller {
                 wrong.setVisible(false);
                 correct.setVisible(false);
                 timer += 1;
+
+
+
             }
             if (countAll >= givenwords.length) {
                 userWord.setDisable(true);
@@ -216,15 +223,22 @@ public class Scene8Controller {
             if (s.equals(real)) {
                 counter++;
                 double tm=60;
-                double wpm= (counter/(timer/tm))*tm;
+                double wpm= Math.ceil(((double)counter/(double)timer)*tm);
                 wordsPerMin.setText(String.valueOf((int)wpm));
 
                 wrong.setVisible(false);
                 correct.setVisible(true);
+
+                //wordsPerMin.setText(String.valueOf((int)counter));
+
             }
             else{
                 wrong.setVisible(true);
                 correct.setVisible(false);
+
+                double tm=60;
+                double wpm= ((double)counter/(double)timer)*tm;
+                wordsPerMin.setText(String.valueOf((int)wpm));
             }
             userWord.setText("");
             accuracy.setText(String.valueOf(Math.round((counter*1.0/countAll)*100)) +"%");
