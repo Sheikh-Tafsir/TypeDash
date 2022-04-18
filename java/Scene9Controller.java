@@ -1,3 +1,4 @@
+//guest wpm test
 package com.tonevellah.demofx1;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,8 +28,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static com.tonevellah.demofx1.Scene1Controller.*;
+import static com.tonevellah.demofx1.Scene1Controller.car;
 
-public class Scene25Controller {
+public class Scene9Controller {
     private int wordCounter = 0;
     private int first = 0;
     int fir = 0;
@@ -161,7 +163,7 @@ public class Scene25Controller {
 
         System.out.println("car "+ car);
         if(car==1){
-            imgview.setImage(new Image ("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/car_yellow.png"));
+            imgview.setImage(new Image("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/car_yellow.png"));
         }
         else if(car==2){
             imgview.setImage(new Image ("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/car_red.png"));
@@ -176,11 +178,11 @@ public class Scene25Controller {
     public void playAgain(ActionEvent e) throws IOException {
         //System.out.println("ttt");
         if(clr==0) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene6.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene10.fxml"));
             root = loader.load();
             //root = FXMLLoader.load(getClass().getResource("game.fxml"));
             stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-            Scene6Controller scene6controller = loader.getController();
+            Scene10Controller scene6controller = loader.getController();
             int acc = (int) Math.round((counter * 1.0 / countAll) * 100);
             scene6controller.displayResult(counter, acc, countAll, countAll - counter);
             scene = new Scene(root);
@@ -188,11 +190,11 @@ public class Scene25Controller {
             stage.show();
         }
         else{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene16.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene20.fxml"));
             root = loader.load();
             //root = FXMLLoader.load(getClass().getResource("game.fxml"));
             stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-            Scene6Controller scene6controller = loader.getController();
+            Scene10Controller scene6controller = loader.getController();
             int acc = (int) Math.round((counter * 1.0 / countAll) * 100);
             scene6controller.displayResult(counter, acc, countAll, countAll - counter);
             scene = new Scene(root);
@@ -338,5 +340,4 @@ public class Scene25Controller {
         }
 
     }
-
 }

@@ -1,3 +1,4 @@
+//signup
 package com.tonevellah.demofx1;
 
 import javafx.event.ActionEvent;
@@ -48,8 +49,10 @@ public class Scene3Controller {
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/typerush", "root", "Rubaiyat26");
             psCheckUserExists = connection.prepareStatement("SELECT * FROM users WHERE username = ?");
+
             psCheckUserExists.setString(1, username);
             resultSet = psCheckUserExists.executeQuery();
+
             if (resultSet.isBeforeFirst()) {
                 System.out.println("user exists");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -61,6 +64,8 @@ public class Scene3Controller {
                 psInsert.setString(2, password);
                 psInsert.executeUpdate();
 
+                Statement stm = connection.createStatement();
+               // stm.executeUpdate("Create table "+username+);
                 log=1;
                 if (clr == 0) root = FXMLLoader.load(getClass().getResource("Scene4.fxml"));
                 else root = FXMLLoader.load(getClass().getResource("Scene14.fxml"));
@@ -68,6 +73,7 @@ public class Scene3Controller {
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
+
 
             }
         } catch (SQLException se) {

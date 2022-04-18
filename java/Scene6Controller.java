@@ -1,3 +1,4 @@
+//view result
 package com.tonevellah.demofx1;
 
 import javafx.event.ActionEvent;
@@ -21,6 +22,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -52,7 +54,6 @@ public class Scene6Controller  implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    static public int wpm1,wpm2,wpm3,wpm4,wpm5,wpm6,wpm7,wpm8,wpm9,wpm10;
     //
     public void displayResult(int wpmScore,int accuracyScore,int typedWords,int wrongWords){
         wpmLabel.setText(String.valueOf((int)wpmScore));
@@ -62,19 +63,18 @@ public class Scene6Controller  implements Initializable {
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle rb){
-        String username="t";
+    public void initialize(URL url, ResourceBundle rb) {
+        String username = "t";
         try {
             File file = new File("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/usname.txt");
             Scanner fileinput = new Scanner(file);
 
             while (fileinput.hasNext()) {
-                 String s = fileinput.nextLine();
-                 username=s;
+                String s = fileinput.nextLine();
+                username = s;
             }
             fileinput.close();
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
 
@@ -82,27 +82,26 @@ public class Scene6Controller  implements Initializable {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         PreparedStatement psInsert = null;
+        ArrayList<Integer> wpmscore = new ArrayList<Integer>();
+        /*wpmscore.add(10);
+        wpmscore.add(20);
+        wpmscore.add(30);
+        wpmscore.add(40);*/
+
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/typerush", "root", "Rubaiyat26");
-            preparedStatement = connection.prepareStatement("SELECT wpm1,wpm2,wpm3 FROM users WHERE username = ?");
+            preparedStatement = connection.prepareStatement("SELECT * FROM races WHERE username = ?");
             preparedStatement.setString(1, username);
             resultSet = preparedStatement.executeQuery();
-            if (!resultSet.isBeforeFirst()) {
-                System.out.println("user not found");
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText("incorrect");
-                alert.show();
-            } else {
-                while(resultSet.next()){
-                    int retrievedPassword = resultSet.getInt("wpm1");
-                    int retrievedPassword2 = resultSet.getInt("wpm2");
-                    int retrievedPassword3 = resultSet.getInt("wpm3");
-                    System.out.println("fu"+ retrievedPassword);
-                    wpm1=retrievedPassword;
-                    wpm2=retrievedPassword2;
-                    wpm3=retrievedPassword3;
-                }
-            }
+            while(resultSet.next()){
+                System.out.println(resultSet.getString("username"));
+                int g = resultSet.getInt("wpm");
+                System.out.println(g);
+                wpmscore.add(g);
+
+                //wpmscore.add(resultSet.getInt("wpm"));
+          }
+
         } catch (SQLException se) {
             se.printStackTrace();
         } finally {
@@ -128,17 +127,26 @@ public class Scene6Controller  implements Initializable {
                 }
             }
         }
+
+        /*XYChart.Series series = new XYChart.Series();
+        int ii=1;
+        for (int i : wpmscore) {
+            series.getData().add(new XYChart.Data(0,10));
+            System.out.println(ii + " " + i);
+            ii++;
+        }
+        lineChart.getData().add(series);*/
+
         XYChart.Series series = new XYChart.Series();
-        series.getData().add(new XYChart.Data("1",wpm1));
-        series.getData().add(new XYChart.Data("2",wpm2));
-        series.getData().add(new XYChart.Data("3",wpm3));
-        series.getData().add(new XYChart.Data("4",90));
-        series.getData().add(new XYChart.Data("5",45));
-        series.getData().add(new XYChart.Data("6",29));
+        for(int i=0; i<wpmscore.size();i++){
+            int x=wpmscore.get(i);
+            System.out.println(i +" "+ x);
+            int ind=i+1;
+            series.getData().add(new XYChart.Data(""+ ind,x+1-1));
+        }
         lineChart.getData().addAll(series);
 
     }
-
     public void tryagain(ActionEvent event) throws IOException {
         if(log==1) {
             if (clr == 0) root = FXMLLoader.load(getClass().getResource("Scene4.fxml"));
@@ -152,19 +160,5 @@ public class Scene6Controller  implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    }
-    public void viewGraph(ActionEvent e) {
-
-        System.out.println("graph");
-    }
-    public void exit(ActionEvent e)throws IOException {
-        log=0;
-        if (clr == 0) root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
-        else root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-        //System.exit(0);
     }
 }

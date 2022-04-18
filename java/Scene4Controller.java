@@ -1,3 +1,4 @@
+//menu
 package com.tonevellah.demofx1;
 
 import javafx.event.ActionEvent;
@@ -77,14 +78,11 @@ public class Scene4Controller
         }
 
     }
-    public void graph(ActionEvent e) {
-        System.out.println("Graph");
-    }
     public void exit(ActionEvent e)throws IOException {
         //System.exit(0);
         log=0;
         if (clr == 0) root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
-        else root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+        else root = FXMLLoader.load(getClass().getResource("hello-viewb.fxml"));
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

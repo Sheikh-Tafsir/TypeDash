@@ -1,3 +1,4 @@
+//login
 package com.tonevellah.demofx1;
 
 import javafx.event.ActionEvent;
@@ -44,6 +45,7 @@ public class Scene2Controller {
     public void menu(ActionEvent event) throws IOException {
         username=uname.getText();
         password=pass.getText();
+
         System.out.println(username +" "+ password);
 
         try {
