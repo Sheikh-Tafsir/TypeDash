@@ -17,6 +17,7 @@ public class Scene1Controller {
     static public int clr=0;
     static public int lvl=1;
     static public int car=1;
+    static public int log=0;
 
     public void changetheme(ActionEvent event) throws IOException {
         if(clr==0){

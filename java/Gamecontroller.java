@@ -21,6 +21,7 @@ import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.sql.*;
 import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -175,7 +176,70 @@ public class Gamecontroller {
 
     }
 
-    public void playAgain(ActionEvent e) throws IOException {
+    public void resultview(ActionEvent e) throws IOException {
+
+        String username="t";
+        try {
+            File file = new File("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/usname.txt");
+            Scanner fileinput = new Scanner(file);
+
+            while (fileinput.hasNext()) {
+                String s = fileinput.nextLine();
+                username=s;
+            }
+            fileinput.close();
+        }
+        catch(Exception fe){
+            System.out.println(fe);
+        }
+
+        Connection connection = null;
+        PreparedStatement psInsert = null;
+        PreparedStatement psCheckUserExists = null;
+        ResultSet resultSet = null;
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/typerush", "root", "Rubaiyat26");
+            psCheckUserExists = connection.prepareStatement("SELECT * FROM users WHERE username = ?");
+            psCheckUserExists.setString(1, username);
+            resultSet = psCheckUserExists.executeQuery();
+            if (resultSet.isBeforeFirst()) {
+                psInsert = connection.prepareStatement("UPDATE users SET wpm1=?");
+                psInsert.setInt(1, counter);
+                psInsert.executeUpdate();
+            }
+        } catch (SQLException se) {
+            se.printStackTrace();
+        } finally {
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException se) {
+                    se.printStackTrace();
+                }
+            }
+            if (psCheckUserExists != null) {
+                try {
+                    psCheckUserExists.close();
+                } catch (SQLException se) {
+                    se.printStackTrace();
+                }
+            }
+            if (psInsert != null) {
+                try {
+                    psInsert.close();
+                } catch (SQLException se) {
+                    se.printStackTrace();
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException se) {
+                    se.printStackTrace();
+                }
+            }
+        }
+
         //System.out.println("ttt");
         if(clr==0) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene6.fxml"));

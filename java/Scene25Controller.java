@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Control;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -82,14 +83,9 @@ public class Scene25Controller {
     private ImageView imgview;
     private double x1;
     private double y1;
-    /*@FXML
-    private ImageView imgview2;
-    private double x2;
-    private double y2;
+
     @FXML
-    private ImageView imgview3;
-    private double x3;
-    private double y3;*/
+    private Label won;
 
 
     public String givenstring =takeGivenLine();
@@ -173,6 +169,7 @@ public class Scene25Controller {
         else if(car==3){
             imgview.setImage(new Image ("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/car_pink.png"));
         }
+        won.setVisible(false);
 
     }
 
@@ -220,6 +217,8 @@ public class Scene25Controller {
                 wrong.setVisible(false);
                 correct.setVisible(false);
                 imgview.setY(y1-=speed);
+                if(y1<=-470)won.setVisible(true);
+
 
                 double tm=60;
                 double wpm= Math.ceil((counter/(tm-timer))*tm);

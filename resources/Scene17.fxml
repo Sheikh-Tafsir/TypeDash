@@ -58,11 +58,11 @@
                 <Image url="@TypeDash.png" />
             </image>
         </ImageView>
-        <Text fill="#0095ff" layoutX="717.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Login" wrappingWidth="147.6000366210938">
-            <font>
-                <Font size="30.0" />
-            </font>
-        </Text>
+      <Text fill="#0095ff" layoutX="676.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Your Text" wrappingWidth="217.2001342773438">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
     </children>
     <effect>
         <Blend />

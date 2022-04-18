@@ -65,7 +65,7 @@
                     </effect>
                 </Button>
                 <Pane prefHeight="4.0" prefWidth="283.0" />
-                <Button mnemonicParsing="false" onAction="#exit" prefHeight="75.0" prefWidth="350.0" style="-fx-background-color: #3F2B63;" text="Exit" textFill="#ecdbdb">
+                <Button mnemonicParsing="false" onAction="#exit" prefHeight="75.0" prefWidth="350.0" style="-fx-background-color: #3F2B63;" text="Logout" textFill="#ecdbdb">
                     <font>
                         <Font size="24.0" />
                     </font>

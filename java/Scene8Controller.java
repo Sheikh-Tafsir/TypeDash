@@ -3,10 +3,14 @@ package com.tonevellah.demofx1;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -27,7 +31,7 @@ import java.util.concurrent.TimeUnit;
 import static com.tonevellah.demofx1.Scene1Controller.clr;
 import static com.tonevellah.demofx1.Scene1Controller.lvl;
 
-public class Scene8Controller {
+public class Scene8Controller{
     private int wordCounter = 0;
     private int first = 0;
     int fir = 0;

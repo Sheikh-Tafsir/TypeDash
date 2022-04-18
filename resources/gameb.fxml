@@ -21,7 +21,7 @@
             <cursor>
                 <Cursor fx:constant="TEXT" />
             </cursor></TextField>
-        <Button fx:id="playAgain" layoutX="649.0" layoutY="595.0" mnemonicParsing="false" onAction="#playAgain" prefHeight="32.0" prefWidth="82.0" style="-fx-background-color: #0598ff;" text="View Result" textAlignment="CENTER" textFill="WHITE">
+        <Button fx:id="playAgain" layoutX="649.0" layoutY="595.0" mnemonicParsing="false" onAction="#resultview" prefHeight="32.0" prefWidth="82.0" style="-fx-background-color: #0598ff;" text="View Result" textAlignment="CENTER" textFill="WHITE">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor></Button>

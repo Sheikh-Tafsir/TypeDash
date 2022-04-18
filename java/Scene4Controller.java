@@ -15,8 +15,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import static com.tonevellah.demofx1.Scene1Controller.clr;
-import static com.tonevellah.demofx1.Scene1Controller.lvl;
+import static com.tonevellah.demofx1.Scene1Controller.*;
 
 public class Scene4Controller
 {
@@ -53,16 +52,6 @@ public class Scene4Controller
     public void programing(ActionEvent e)throws IOException {
 
         lvl=4;
-        //System.out.println("Programing");
-        try {
-            FileWriter fileWriter = new FileWriter("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/Levels.txt");
-            fileWriter.write("4");
-            fileWriter.close();
-            System.out.println("4");
-        }
-        catch(IOException ex){
-            ex.printStackTrace();
-        }
 
         if(clr==0){
             FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
@@ -91,8 +80,14 @@ public class Scene4Controller
     public void graph(ActionEvent e) {
         System.out.println("Graph");
     }
-    public void exit(ActionEvent e) {
-        System.exit(0);
-        //System.out.println("Exit");
+    public void exit(ActionEvent e)throws IOException {
+        //System.exit(0);
+        log=0;
+        if (clr == 0) root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+        else root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

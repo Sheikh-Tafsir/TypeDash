@@ -14,12 +14,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tonevellah.demofx1.Scene2Controller">
     <children>
-        <TextField fx:id="username" layoutX="645.0" layoutY="268.0" prefHeight="65.0" prefWidth="272.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+        <TextField fx:id="uname" layoutX="645.0" layoutY="268.0" prefHeight="65.0" prefWidth="272.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
             <font>
                 <Font size="14.0" />
             </font>
         </TextField>
-        <PasswordField fx:id="password" layoutX="645.0" layoutY="365.0" prefHeight="65.0" prefWidth="272.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+        <PasswordField fx:id="pass" layoutX="645.0" layoutY="365.0" prefHeight="65.0" prefWidth="272.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
             <font>
                 <Font size="14.0" />
             </font>

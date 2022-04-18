@@ -7,7 +7,9 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -16,60 +18,113 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.*;
 import java.util.Scanner;
 
 import static com.tonevellah.demofx1.Scene1Controller.clr;
-
+import static com.tonevellah.demofx1.Scene1Controller.log;
 
 public class Scene2Controller {
     private Stage stage;
     private Scene scene;
     private Parent root;
 
+    static public int[] wpms= new int[10];
+
+    @FXML
+    private TextField uname;
+    @FXML
+    private PasswordField pass;
+
+    public String username;
+    public String password;
+
     public void menu(ActionEvent event) throws IOException {
-        System.out.println(clr);
-        String st="";
-        int i=0;
-        int ran = (int) Math.floor(Math.random() * (4 - 0 + 1) + 0);
-        System.out.println("advc"+ ran);
+        username=uname.getText();
+        password=pass.getText();
+        System.out.println(username +" "+ password);
+
         try {
-            File file = new File("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/advices.txt");
-            Scanner fileinput = new Scanner(file);
-            while (fileinput.hasNext()) {
-                String s = fileinput.nextLine();
-                if (i == ran) {
-                    st += s;
-                    break;
-                }
-                i++;
-            }
-            fileinput.close();
+            FileWriter fileWriter = new FileWriter("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/usname.txt");
+            fileWriter.write(username);
+            fileWriter.close();
         }
-        catch (Exception exp) {
-            System.out.println(exp);
+        catch(IOException exc){
+            exc.printStackTrace();
         }
 
-        if(clr==0){
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene4.fxml"));
-            root = loader.load();
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            Scene4Controller scene4controller = loader.getController();
-            scene4controller.tips(st);
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        PreparedStatement psInsert = null;
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/typerush", "root", "Rubaiyat26");
+            preparedStatement = connection.prepareStatement("SELECT password FROM users WHERE username = ?");
+            preparedStatement.setString(1, username);
+            resultSet = preparedStatement.executeQuery();
+            if (!resultSet.isBeforeFirst()) {
+                System.out.println("user not found");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("incorrect");
+                alert.show();
+            } else {
+                while(resultSet.next()){
+                    String retrievedPassword = resultSet.getString("password");
+                    if(retrievedPassword.equals(password)){
+                        /*int con=resultSet.getInt("counter");
+                        wpms[1]=resultSet.getInt("wpm1");
+                        wpms[2]=resultSet.getInt("wpm2");*/
+
+                        log=1;
+                        if (clr == 0) root = FXMLLoader.load(getClass().getResource("Scene4.fxml"));
+                        else root = FXMLLoader.load(getClass().getResource("Scene14.fxml"));
+                        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        scene = new Scene(root);
+                        stage.setScene(scene);
+                        stage.show();
+                    }
+                    else{
+                        System.out.println("password did not match");
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setContentText("the provided credentials are incorrect");
+                        alert.show();
+                    }
+                }
+            }
+        } catch (SQLException se) {
+            se.printStackTrace();
+        } finally {
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException se) {
+                    se.printStackTrace();
+                }
+            }
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException se) {
+                    se.printStackTrace();
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException se) {
+                    se.printStackTrace();
+                }
+            }
         }
-        else{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene14.fxml"));
-            root = loader.load();
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            Scene4Controller scene4controller = loader.getController();
-            scene4controller.tips(st);
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        }
+        /*if (clr == 0) root = FXMLLoader.load(getClass().getResource("Scene4.fxml"));
+        else root = FXMLLoader.load(getClass().getResource("Scene14.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();*/
     }
     public void goback(ActionEvent event) throws IOException {
         if(clr==0)root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
