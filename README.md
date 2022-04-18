@@ -5,6 +5,17 @@
    <img src="https://img.shields.io/github/stars/Sheikh-Tafsir/TypeDash"/>
    <img src="https://img.shields.io/github/forks/Sheikh-Tafsir/TypeDash"/>
 </p>
+## Visuals
+### Login
+![2i](https://user-images.githubusercontent.com/83116065/163856289-1cdfc1c3-46ae-4e0e-ab7f-1a3f23c015a9.JPG)
+### Choose level
+![5i](https://user-images.githubusercontent.com/83116065/163856531-91a82eba-9e4f-45e8-a9bf-ed85e6efef1c.jpg)
+### Select Test
+![4](https://user-images.githubusercontent.com/83116065/163856395-aae65da5-9e60-4639-95d8-feef4252ef1c.JPG)
+### Test WPM
+![6](https://user-images.githubusercontent.com/83116065/163856679-f10c6451-d5b2-43a8-882a-793dd6433506.JPG)
+### View Score
+![8](https://user-images.githubusercontent.com/83116065/163856454-0e82b05c-fcd2-4145-9f28-7f2935712260.JPG)
 
 ## Features
 - Distinct Username and password for the users.
