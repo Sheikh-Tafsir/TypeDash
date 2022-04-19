@@ -138,6 +138,7 @@ public class Scene6Controller  implements Initializable {
         lineChart.getData().add(series);*/
 
         XYChart.Series series = new XYChart.Series();
+        series.setName("WPM Graph");
         for(int i=0; i<wpmscore.size();i++){
             int x=wpmscore.get(i);
             System.out.println(i +" "+ x);

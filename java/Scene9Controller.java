@@ -80,6 +80,8 @@ public class Scene9Controller {
     private Text blueText;
     @FXML
     private Text greenText;
+    @FXML
+    private Text lastText;
 
     @FXML
     private ImageView imgview;
@@ -266,6 +268,7 @@ public class Scene9Controller {
         }
 
         if (ke.getCode().equals(KeyCode.SPACE)) {
+            int colf=5;
             System.out.println(first);
             String s = userWord.getText();
             if(fir>=1)s=s.substring(1,s.length());
@@ -283,6 +286,7 @@ public class Scene9Controller {
                 correct.setVisible(true);
 
                 speed=(int)wpm/5;
+                colf=1;
             }
             else{
                 double tm=60;
@@ -293,6 +297,7 @@ public class Scene9Controller {
                 correct.setVisible(false);
 
                 speed=(int)wpm/5;
+                colf=0;
 
             }
 
@@ -317,11 +322,15 @@ public class Scene9Controller {
             else if(fir<175)lim=175;
             textflow.getChildren().clear();
             String st="";
-            for(int ii=lim-35;ii<fir;ii++){
+            for(int ii=lim-35;ii<fir-1;ii++){
                 st+=givenwords[ii] + " ";
             }
             greyText = new Text(st);
             greyText.setFill(Color.GREY);
+
+            lastText = new Text(givenwords[fir-1] +" ");
+            if(colf==0)lastText.setFill(Color.LIGHTPINK);
+            else lastText.setFill(Color.LIGHTGREEN);
 
             blueText = new Text(givenwords[fir]);
             blueText.setFill(Color.BLUE);
@@ -334,7 +343,7 @@ public class Scene9Controller {
             if(clr==0)greenText.setFill(Color.BLACK);
             else greenText.setFill(Color.WHITE);
 
-            textflow.getChildren().addAll(greyText,blueText,greenText);
+            textflow.getChildren().addAll(greyText,lastText,blueText,greenText);
             textflow.setStyle("-fx-font: 28 arial;");
             textflow.setPrefWidth(700);
         }

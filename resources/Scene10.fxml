@@ -77,6 +77,11 @@
                 <Image url="@TypeDash.png" />
             </image>
         </ImageView>
+      <ImageView fitHeight="277.0" fitWidth="302.0" layoutX="164.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@TypeDash1.png" />
+         </image>
+      </ImageView>
     </children>
     <effect>
         <Blend />

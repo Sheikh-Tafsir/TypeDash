@@ -68,9 +68,9 @@ public class Scene2Controller {
             preparedStatement.setString(1, username);
             resultSet = preparedStatement.executeQuery();
             if (!resultSet.isBeforeFirst()) {
-                System.out.println("user not found");
+                System.out.println("User not found");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText("incorrect");
+                alert.setContentText("Usern not found!");
                 alert.show();
             } else {
                 while(resultSet.next()){
@@ -91,7 +91,7 @@ public class Scene2Controller {
                     else{
                         System.out.println("password did not match");
                         Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setContentText("the provided credentials are incorrect");
+                        alert.setContentText("Password did not match!");
                         alert.show();
                     }
                 }

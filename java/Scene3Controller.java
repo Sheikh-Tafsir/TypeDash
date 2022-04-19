@@ -56,7 +56,7 @@ public class Scene3Controller {
             if (resultSet.isBeforeFirst()) {
                 System.out.println("user exists");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText("you cannot use this name");
+                alert.setContentText("This name is already taken!");
                 alert.show();
             } else {
                 psInsert = connection.prepareStatement("INSERT INTO users(username,password) VALUES(?,?)");
