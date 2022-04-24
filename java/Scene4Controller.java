@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 import static com.tonevellah.demofx1.Scene1Controller.*;
 
@@ -26,12 +27,32 @@ public class Scene4Controller
     private Parent root;
     @FXML
     Text advc;
+    @FXML
+    Text uname;
 
     public void tips(String str){
+
         advc.setText(str);
+
+        /*String username="t";
+        try {
+            File file = new File("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/usname.txt");
+            Scanner fileinput = new Scanner(file);
+
+            while (fileinput.hasNext()) {
+                String s = fileinput.nextLine();
+                username=s;
+            }
+            fileinput.close();
+        }
+        catch(Exception fe){
+            System.out.println(fe);
+        }
+        uname.setText("Hi "+ username);*/
     }
 
     public void playGame(ActionEvent e) throws IOException {
+
         if(clr==0)root = FXMLLoader.load(getClass().getResource("Scene5.fxml"));
         else root = FXMLLoader.load(getClass().getResource("Scene15.fxml"));
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();

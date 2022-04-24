@@ -27,6 +27,7 @@ import static com.tonevellah.demofx1.Scene1Controller.lvl;
 import static com.tonevellah.demofx1.Scene1Controller.car;
 import static com.tonevellah.demofx1.Scene1Controller.log;
 
+
 public class Scene5Controller implements Initializable {
 
     @FXML
@@ -34,6 +35,8 @@ public class Scene5Controller implements Initializable {
     private Scene scene;
     private Parent root;
 
+    @FXML
+    private CheckBox myCheckBox;
     @FXML
     public RadioButton rButton1;
     @FXML
@@ -44,15 +47,9 @@ public class Scene5Controller implements Initializable {
     private ChoiceBox<String> myChoiceBox=new ChoiceBox<String>();
     private String[] cars = {"Yellow","Red","Pink"};
     int foodf=0;
+    static public int virkey=0;
 
-    /*public void stlevel(MouseEvent me) {
-        if(foodf==0) {
-            myChoiceBox.getItems().addAll(food);
-            myChoiceBox.setOnAction(this::getFood);
-            foodf++;
 
-        }
-    }*/
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
 
@@ -85,31 +82,68 @@ public class Scene5Controller implements Initializable {
 
     }
 
+    public void getkeyboard(ActionEvent event) {
+
+        if(myCheckBox.isSelected()) {
+            virkey=1;
+        }
+        else{
+            virkey=0;
+        }
+
+    }
+
 
     public void gotogame(ActionEvent e) throws IOException{
 
         if(log==1) {
             if (clr == 0) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
-                root = loader.load();
-                stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-                Gamecontroller gamecontroller = loader.getController();
-                //Scene25Controller gamecontroller = loader.getController();
-                gamecontroller.takeGivenLine();
-                gamecontroller.setfirstword();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-            } else {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("gameb.fxml"));
-                root = loader.load();
-                stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-                Gamecontroller gamecontroller = loader.getController();
-                gamecontroller.takeGivenLine();
-                gamecontroller.setfirstword();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
+                if(virkey==0) {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
+                    root = loader.load();
+                    stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                    Gamecontroller gamecontroller = loader.getController();
+                    gamecontroller.takeGivenLine();
+                    gamecontroller.setfirstword();
+                    scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                }
+                else{
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene101.fxml"));
+                    root = loader.load();
+                    stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                    Scene101Controller gamecontroller = loader.getController();
+                    gamecontroller.takeGivenLine();
+                    gamecontroller.setfirstword();
+                    scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                }
+            }
+            else {
+                if(virkey==0) {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("gameb.fxml"));
+                    root = loader.load();
+                    stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                    Gamecontroller gamecontroller = loader.getController();
+                    gamecontroller.takeGivenLine();
+                    gamecontroller.setfirstword();
+                    scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                }
+                else{
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene111.fxml"));
+                    root = loader.load();
+                    stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                    Scene101Controller gamecontroller = loader.getController();
+                    gamecontroller.takeGivenLine();
+                    gamecontroller.setfirstword();
+                    scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                }
             }
         }
         else{
@@ -124,7 +158,8 @@ public class Scene5Controller implements Initializable {
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
-            } else {
+            }
+            else {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene19.fxml"));
                 root = loader.load();
                 stage = (Stage) ((Node) e.getSource()).getScene().getWindow();

@@ -18,6 +18,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.*;
 
@@ -33,14 +34,26 @@ public class Scene3Controller {
     private TextField uname;
     @FXML
     private PasswordField pass;
+    @FXML
+    private Label warnin;
 
     public String username;
     public String password;
 
     public void menu(ActionEvent event) throws IOException {
+
         username=uname.getText();
         password=pass.getText();
         System.out.println(username +" "+ password);
+
+        try {
+            FileWriter fileWriter = new FileWriter("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/usname.txt");
+            fileWriter.write(username);
+            fileWriter.close();
+        }
+        catch(IOException exc){
+            exc.printStackTrace();
+        }
 
         Connection connection = null;
         PreparedStatement psInsert = null;
@@ -54,10 +67,14 @@ public class Scene3Controller {
             resultSet = psCheckUserExists.executeQuery();
 
             if (resultSet.isBeforeFirst()) {
+                warnin.setText("Name already taken!");
+                warnin.setVisible(true);
                 System.out.println("user exists");
-                Alert alert = new Alert(Alert.AlertType.ERROR);
+                /*Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("This name is already taken!");
-                alert.show();
+                alert.show();*/
+                uname.setText("");
+                pass.setText("");
             } else {
                 psInsert = connection.prepareStatement("INSERT INTO users(username,password) VALUES(?,?)");
                 psInsert.setString(1, username);

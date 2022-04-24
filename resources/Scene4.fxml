@@ -74,7 +74,7 @@
             <Image url="@TypeDash.png" />
          </image>
       </ImageView>
-      <Text fill="#0095ff" layoutX="657.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WPM Score" wrappingWidth="214.951904296875">
+      <Text fx:id="uname" fill="#0095ff" layoutX="657.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WPM Score" wrappingWidth="214.951904296875">
          <font>
             <Font size="40.0" />
          </font>

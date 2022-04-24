@@ -13,6 +13,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
@@ -20,6 +21,8 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.sql.*;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -90,13 +93,16 @@ public class Gamecontroller {
     @FXML
     private Label won;
 
+    private long pretime = 0;
+    Instant start,end;
+
 
     public String givenstring =takeGivenLine();
 
     public String takeGivenLine(){
         int max=50,min=40;
         max=lvl;
-        System.out.println("level" + lvl);
+        //System.out.println("level" + lvl);
         min = max - 1;
         max *= 7;
         min *= 7;
@@ -104,7 +110,7 @@ public class Gamecontroller {
         int i = 0;
         int ran = (int) Math.floor(Math.random() * (max - min + 1) + min);
 
-        System.out.println("random" + ran);
+        //System.out.println("random" + ran);
         try {
             File file = new File("D:/java code/demofx1/src/main/resources/com/tonevellah/demofx1/Lines.txt");
             Scanner fileinput = new Scanner(file);
@@ -154,9 +160,10 @@ public class Gamecontroller {
         textflow.getChildren().addAll(greyText,blueText, greenText);
         textflow.setStyle("-fx-font: 28 arial;");
         textflow.setPrefWidth(700);
-        //textflow.setMaxHeight(Control.USE_PREF_SIZE);
 
         textflow.setPadding(new Insets(15, 15, 15, 15));
+
+        start = Instant.now();
 
         playAgain.setVisible(false);
         wrong.setVisible(false);
@@ -176,7 +183,7 @@ public class Gamecontroller {
 
     }
 
-    public void resultview(ActionEvent e) throws IOException {
+    public void resultview(MouseEvent e) throws IOException {
 
         String username="t";
         try {
@@ -240,6 +247,56 @@ public class Gamecontroller {
             }
         }
 
+
+        //extra
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/typerush", "root", "Rubaiyat26");
+
+            psInsert = connection.prepareStatement("INSERT INTO extra(username,wpm,accuracy,totword,totchar,pretime) VALUES(?,?,?,?,?,?)");
+            psInsert.setString(1, username);
+            psInsert.setInt(2, counter);
+            int acc = (int) Math.round((counter * 1.0 / countAll) * 100);
+            psInsert.setInt(3, acc);
+            psInsert.setInt(4, countAll);
+            psInsert.setInt(5, countChar);
+            psInsert.setInt(6, (int)pretime);
+            psInsert.executeUpdate();
+
+
+        } catch (SQLException se) {
+            se.printStackTrace();
+        } finally {
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException se) {
+                    se.printStackTrace();
+                }
+            }
+            if (psCheckUserExists != null) {
+                try {
+                    psCheckUserExists.close();
+                } catch (SQLException se) {
+                    se.printStackTrace();
+                }
+            }
+            if (psInsert != null) {
+                try {
+                    psInsert.close();
+                } catch (SQLException se) {
+                    se.printStackTrace();
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException se) {
+                    se.printStackTrace();
+                }
+            }
+        }
+
+
         //System.out.println("ttt");
         if(clr==0) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene6.fxml"));
@@ -272,7 +329,8 @@ public class Gamecontroller {
     private int countAll = 0;
     private int counter = 0;
     private int timer = 60;
-    private int speed = 5;
+    private int speed = 0;
+    private int countChar=0;
 
     Runnable r = new Runnable() {
         @Override
@@ -283,7 +341,8 @@ public class Gamecontroller {
                 wrong.setVisible(false);
                 correct.setVisible(false);
                 imgview.setY(y1-=speed);
-                if(y1<=-470)won.setVisible(true);
+                //speed=0;
+                if(y1<=-480)won.setVisible(true);
 
 
                 double tm=60;
@@ -297,15 +356,6 @@ public class Gamecontroller {
                     userWord.setText("Game over");
                     playAgain.setVisible(true);
 
-                    /*try {
-                        FileWriter myWriter = new FileWriter(saveData);
-                        myWriter.write(countAll +";");
-                        myWriter.write(counter +";");
-                        myWriter.write(String.valueOf(countAll-counter));
-                        myWriter.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }*/
                 }
 
                 if (timer == -4) {
@@ -322,10 +372,13 @@ public class Gamecontroller {
 
     public void startGame(KeyEvent ke) throws IOException{
 
-        // only gets called once
         if(first==0){
             first = 1;
             executor.scheduleAtFixedRate(r, 0, 1, TimeUnit.SECONDS);
+
+            end = Instant.now();
+            Duration timeElapsed = Duration.between(start, end);
+            pretime=timeElapsed.toMillis();
 
         }
 
@@ -337,6 +390,8 @@ public class Gamecontroller {
             fir++;
             String real = programWord.getText();
 
+            countChar+=s.length();
+
             countAll++;
             if (s.equals(real)) {
                 counter++;
@@ -347,7 +402,14 @@ public class Gamecontroller {
                 wrong.setVisible(false);
                 correct.setVisible(true);
 
-                speed=(int)wpm/5;
+                if(lvl==1)speed=(int)wpm/5;
+                else if(lvl==2)speed=(int)wpm/5 +3;
+                else if(lvl==3)speed=(int)wpm/5 +6;
+                else if(lvl==4)speed=(int)wpm/5 +9;
+                /*if(lvl==1)speed=10;
+                else if(lvl==2)speed=12;
+                else if(lvl==3)speed=14;
+                else if(lvl==4)speed=16;*/
                 colf=1;
             }
             else{
@@ -358,7 +420,8 @@ public class Gamecontroller {
                 wrong.setVisible(true);
                 correct.setVisible(false);
 
-                speed=(int)wpm/5;
+                //speed=(int)wpm/5;
+                speed=0;
                 colf=0;
 
             }

@@ -15,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
@@ -177,7 +178,7 @@ public class Scene9Controller {
 
     }
 
-    public void playAgain(ActionEvent e) throws IOException {
+    public void playAgain(MouseEvent e) throws IOException {
         //System.out.println("ttt");
         if(clr==0) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene10.fxml"));
@@ -283,7 +284,7 @@ public class Scene9Controller {
                 wordsPerMin.setText(String.valueOf((int)wpm));
 
                 wrong.setVisible(false);
-                correct.setVisible(true);
+                correct.setVisible(false);
 
                 speed=(int)wpm/5;
                 colf=1;
@@ -293,7 +294,7 @@ public class Scene9Controller {
                 double wpm= (counter/(tm-timer))*tm;
                 wordsPerMin.setText(String.valueOf((int)wpm));
 
-                wrong.setVisible(true);
+                wrong.setVisible(false);
                 correct.setVisible(false);
 
                 speed=(int)wpm/5;

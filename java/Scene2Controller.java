@@ -38,6 +38,8 @@ public class Scene2Controller {
     private TextField uname;
     @FXML
     private PasswordField pass;
+    @FXML
+    private Label warnin;
 
     public String username;
     public String password;
@@ -68,17 +70,19 @@ public class Scene2Controller {
             preparedStatement.setString(1, username);
             resultSet = preparedStatement.executeQuery();
             if (!resultSet.isBeforeFirst()) {
+                warnin.setText("Username not found!");
+                warnin.setVisible(true);
                 System.out.println("User not found");
-                Alert alert = new Alert(Alert.AlertType.ERROR);
+                /*Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Usern not found!");
-                alert.show();
+                alert.show();*/
+                uname.setText("");
+                pass.setText("");
             } else {
                 while(resultSet.next()){
                     String retrievedPassword = resultSet.getString("password");
                     if(retrievedPassword.equals(password)){
-                        /*int con=resultSet.getInt("counter");
-                        wpms[1]=resultSet.getInt("wpm1");
-                        wpms[2]=resultSet.getInt("wpm2");*/
+
 
                         log=1;
                         if (clr == 0) root = FXMLLoader.load(getClass().getResource("Scene4.fxml"));
@@ -89,10 +93,13 @@ public class Scene2Controller {
                         stage.show();
                     }
                     else{
+                        warnin.setText("Password dont match!");
+                        warnin.setVisible(true);
                         System.out.println("password did not match");
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        /*Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setContentText("Password did not match!");
-                        alert.show();
+                        alert.show();*/
+                        pass.setText("");
                     }
                 }
             }
