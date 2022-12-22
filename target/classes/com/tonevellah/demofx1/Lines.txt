@@ -1,0 +1,75 @@
+Out of all domesticated animals in the world, only one domesticated animal understands that when we point at something, we want them to see the object we’re pointing at. 
+That animal is a dog. 
+Giving cats cadies is never a great idea, especially since they cannot even taste the sweetness. 
+They just do not have the genes to detect sugar on their taste bud. 
+Garden Veggie Straws, a snack, shows fresh vegetables on the bag and promoted it as a healthy alternative to chips. 
+However, it was found that they are actually less nutritious than potato chips. 
+Mars is a very red planet. This is because its surface contains a lot of iron oxide. 
+Iron oxide is the same thing that makes blood and rust red. 
+Since Mars is covered in it, it looks red! 
+Penguins often look like they have fur, but like all birds, they have feathers. 
+Their feathers are just so densely packed and short that it gives off the appearance of fur. 
+Rabbits are considered a pest in Australia, so much that in certain states, you can only keep domestic rabbits as pets. 
+However, in Queensland, you are not allowed to keep any kind of rabbits. 
+He could not see the turtle anywhere! He went at full speed to the finish line but found the turtle there waiting for him.
+You can divide a pie into 8 equal pieces using just 3 cuts! 
+First, make a horizontal cut in the middle, then a vertical cut, and then you stack the 4 slices and make a cut in the middle of that.
+Max Planck was the founder quantum theory and a Nobel Prize winner. 
+However, when he went to study physics, his professor told him that almost everything has already been discovered.
+The United States has won 246 Olympic gold medals in the entire Olympics history. 
+Michael Phelps happened to have earned 23 of those gold medals. 
+This equals to about 10% of all the gold medals.
+When Grand Theft Auto was released, the developer, Rockstar, paid reviewers to give the game negative reviews to keep it controversial and popular. 
+This tactic worked as it made the game a success.
+When the Wii U didn’t sell well and experienced a fall in revenue, the head of Nintendo decided to cut his own pay in half for five months. 
+The extra money was used to make up for the loss.
+When you think of where camels came from, you probably think of desert in the Middle East. 
+However, at some point, the Middle East had to import camels and sand from Australia due to a shortage.
+While Pokemon is the highest-grossing media franchise of all time, it is surprisingly not the best-selling game. 
+In fact, it’s not even in the top 3. Currently, Tetris is the best-selling game.
+Bangladesh is a small and beautiful country in South Asia. 
+We got independence in 1971 from Pakistan after a long war. 
+Because of the sacrifice of millions of freedom fighters we got this country. 
+16 December is our Victory Day because this day the Pakistani army surrendered. 
+And 26th March is our Independence Day. We are the only nation that sacrifices lives for language and now it is known as International Mother Language Day on 21st February. 
+More than 180 countries celebrate this day. 
+One day a rabbit was boasting about how fast he could run. 
+He was laughing at the turtle for being so slow. 
+Much to the rabbit’s surprise, the turtle challenged him to a race. 
+The rabbit thought this was a good joke and accepted the challenge.  
+As the race began, the rabbit raced way ahead of the turtle, just like everyone thought. 
+The rabbit got to the halfway point and could not see the turtle anywhere. 
+He was hot and tired and decided to stop and take a short nap. 
+Even if the turtle passed him, he would be able to race to the finish line ahead of him. 
+All this time the turtle kept walking step by step by step.  
+He just kept going. However, the rabbit slept longer than he had thought and woke up. 
+#include <iostream> 
+using namespace std; 
+int main() { 
+int number; 
+cout << "Enter an integer: "; 
+cin >> number; 
+if (number>0) { 
+cout << "You entered a positive integer: " << number << endl; 
+} 
+cout << "This statement is always executed."; 
+return 0; 
+} 
+#include <iostream> 
+using namespace std; 
+int main() { 
+for (int i=1; i<=5; ++i) { 
+cout << i << " "; 
+} 
+return 0; 
+} 
+#include <iostream> 
+using namespace std; 
+int main() { 
+for (int i=1; i<=5; i++) { 
+if (i==3) { 
+continue; 
+} 
+cout << i << endl; 
+return 0;
+}

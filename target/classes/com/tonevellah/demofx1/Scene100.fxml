@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tonevellah.demofx1.Scene100Controller">
+   <children>
+      <ImageView fitHeight="252.0" fitWidth="737.0" layoutX="385.0" layoutY="534.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@virkeyborad.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="428.0" layoutY="543.0" mnemonicParsing="false" onMouseClicked="#but1" prefHeight="24.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="1">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button layoutX="570.0" layoutY="543.0" mnemonicParsing="false" onMouseClicked="#but4" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="4" />
+      <Button layoutX="476.0" layoutY="543.0" mnemonicParsing="false" onMouseClicked="#but2" prefHeight="26.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="2" />
+      <Button layoutX="523.0" layoutY="543.0" mnemonicParsing="false" onMouseClicked="#but3" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="3" />
+      <Button layoutX="618.0" layoutY="543.0" mnemonicParsing="false" onMouseClicked="#but5" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="5" />
+      <Button layoutX="445.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#butq" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="Q" />
+      <Button layoutX="493.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#butw" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="W" />
+      <Button layoutX="540.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#bute" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="E" />
+      <Button layoutX="667.0" layoutY="543.0" mnemonicParsing="false" onMouseClicked="#but6" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="6" />
+      <Button layoutX="587.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#butr" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="R" />
+      <Button layoutX="635.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#butt" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="T" />
+      <Button layoutX="684.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#buty" prefHeight="0.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="Y" />
+      <Button layoutX="718.0" layoutY="543.0" mnemonicParsing="false" onMouseClicked="#but7" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="7" />
+      <Button layoutX="764.0" layoutY="543.0" mnemonicParsing="false" onMouseClicked="#but8" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="8" />
+      <Button layoutX="735.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#butu" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="U" />
+      <Button layoutX="781.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#buti" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="I" />
+      <Button layoutX="828.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#buto" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="O" />
+      <Button layoutX="875.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#butp" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="P" />
+      <Button layoutX="811.0" layoutY="543.0" mnemonicParsing="false" onMouseClicked="#but9" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="9" />
+      <Button layoutX="862.0" layoutY="543.0" mnemonicParsing="false" onMouseClicked="#but0" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="0" />
+      <Button layoutX="909.0" layoutY="543.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="34.0" style="-fx-border-width: 2px; -fx-border-color: #0598ff;" text="-">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button layoutX="956.0" layoutY="543.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="34.0" style="-fx-border-width: 2px; -fx-border-color: #0598ff;" text="+">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button layoutX="926.0" layoutY="591.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="[" />
+      <Button layoutX="973.0" layoutY="591.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="]" />
+      <Button layoutX="462.0" layoutY="636.0" mnemonicParsing="false" onMouseClicked="#buta" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="A" />
+      <Button layoutX="505.0" layoutY="636.0" mnemonicParsing="false" onMouseClicked="#buts" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="S" />
+      <Button layoutX="557.0" layoutY="636.0" mnemonicParsing="false" onMouseClicked="#butd" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="D" />
+      <Button layoutX="604.0" layoutY="636.0" mnemonicParsing="false" onMouseClicked="#butf" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="F" />
+      <Button layoutX="652.0" layoutY="636.0" mnemonicParsing="false" onMouseClicked="#butg" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="G" />
+      <Button layoutX="701.0" layoutY="636.0" mnemonicParsing="false" onMouseClicked="#buth" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="H" />
+      <Button layoutX="747.0" layoutY="636.0" mnemonicParsing="false" onMouseClicked="#butj" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="J" />
+      <Button layoutX="798.0" layoutY="636.0" mnemonicParsing="false" onMouseClicked="#butk" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="K" />
+      <Button layoutX="845.0" layoutY="636.0" mnemonicParsing="false" onMouseClicked="#butl" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="L" />
+      <Button layoutX="892.0" layoutY="636.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff;" text=";" />
+      <Button layoutX="939.0" layoutY="636.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff;" text="'" />
+      <Button layoutX="488.0" layoutY="684.0" mnemonicParsing="false" onMouseClicked="#butz" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="Z" />
+      <Button layoutX="536.0" layoutY="684.0" mnemonicParsing="false" onMouseClicked="#butx" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="X" />
+      <Button layoutX="583.0" layoutY="684.0" mnemonicParsing="false" onMouseClicked="#butc" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="C" />
+      <Button layoutX="918.0" layoutY="684.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff;" text="/" />
+      <Button layoutX="632.0" layoutY="684.0" mnemonicParsing="false" onMouseClicked="#butv" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="V" />
+      <Button layoutX="676.0" layoutY="684.0" mnemonicParsing="false" onMouseClicked="#butb" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="B" />
+      <Button layoutX="727.0" layoutY="684.0" mnemonicParsing="false" onMouseClicked="#butn" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="N" />
+      <Button layoutX="769.0" layoutY="684.0" mnemonicParsing="false" onMouseClicked="#butm" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="M" />
+      <Button layoutX="824.0" layoutY="684.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff;" text="," />
+      <Button layoutX="871.0" layoutY="684.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="34.0" style="-fx-border-color: #0598ff;" text="." />
+      <Button layoutX="990.0" layoutY="636.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="51.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="ENTER">
+         <font>
+            <Font size="11.0" />
+         </font></Button>
+      <Button layoutX="582.0" layoutY="733.0" mnemonicParsing="false" onMouseClicked="#butspace" prefHeight="42.0" prefWidth="222.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="SPACE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button layoutX="393.0" layoutY="684.0" mnemonicParsing="false" onMouseClicked="#butshift" prefHeight="30.0" prefWidth="78.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="SHIFT">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button layoutX="396.0" layoutY="636.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="51.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="CAPS" />
+      <Button layoutX="1007.0" layoutY="544.0" mnemonicParsing="false" onMouseClicked="#butbspace" prefHeight="30.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="&lt;-" />
+      <TextField fx:id="loggerPane" layoutX="621.0" layoutY="472.0" prefHeight="54.0" prefWidth="246.0" />
+      <Button layoutX="967.0" layoutY="684.0" mnemonicParsing="false" onMouseClicked="#butshift" prefHeight="30.0" prefWidth="78.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="SHIFT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="1021.0" layoutY="590.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="13.0" style="-fx-border-width: 2px; -fx-border-color: #0598ff;" text="\\">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="393.0" layoutY="733.0" mnemonicParsing="false" onMouseClicked="#but1" prefHeight="42.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="CTRL">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Button>
+      <Button layoutX="436.0" layoutY="733.0" mnemonicParsing="false" onMouseClicked="#but1" prefHeight="42.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="1">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="487.0" layoutY="733.0" mnemonicParsing="false" onMouseClicked="#but1" prefHeight="42.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="WIN">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Button layoutX="532.0" layoutY="733.0" mnemonicParsing="false" onMouseClicked="#but1" prefHeight="42.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="ALT" underline="true">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Button layoutX="817.0" layoutY="733.0" mnemonicParsing="false" onMouseClicked="#but1" prefHeight="42.0" prefWidth="34.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="ALT">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Button layoutX="862.0" layoutY="733.0" mnemonicParsing="false" onMouseClicked="#but1" prefHeight="42.0" prefWidth="43.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="CTRL">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Button layoutX="393.0" layoutY="543.0" mnemonicParsing="false" onMouseClicked="#but1" prefHeight="34.0" prefWidth="22.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="`">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="395.0" layoutY="590.0" mnemonicParsing="false" onMouseClicked="#but1" prefHeight="30.0" prefWidth="43.0" style="-fx-border-color: #0598ff; -fx-border-width: 2px;" text="TAB" />
+      <Button layoutX="960.0" layoutY="758.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="43.0" style="-fx-border-color: #0598ff;" text="DOWN">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Button>
+      <Button layoutX="960.0" layoutY="733.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="43.0" style="-fx-border-color: #0598ff;" text="UP">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Button layoutX="1009.0" layoutY="758.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="51.0" style="-fx-border-color: #0598ff;" text="RIGHT">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Button layoutX="909.0" layoutY="757.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="43.0" style="-fx-border-color: #0598ff;" text="LEFT">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
